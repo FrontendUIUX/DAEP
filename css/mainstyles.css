@@ -24,6 +24,9 @@
         transform: translateX(0%);
     }
 }
+html:not(.designer) body.theme-entry{
+    background: var(--white)!important;
+}
 /* SIDEBAR START */
 html body aside.sidebar {
     width: 19.5rem;
