@@ -7,11 +7,11 @@
 }
 @font-face {
     font-family: "Lato Regular";
-    src: url("../fonts/Lato-Regular.ttf");
+    src: url("/Runtime/Styles/DAEP/fonts/Lato-Regular.ttf");
 }
 @font-face {
     font-family: "Lato Bold";
-    src: url("../fonts/Lato-Bold.ttf");
+    src: url("/Runtime/Styles/DAEP/fonts/Lato-Bold.ttf");
 }
 @keyframes fadeLeft {
     0% {
