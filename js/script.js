@@ -20,24 +20,64 @@ document.addEventListener("DOMContentLoaded", () => {
           links: [
             {
               icon: "/Runtime/Styles/Style%20profile/images/net/Human Capital Excellence.svg",
-              name: "New Request",
+              name: "Dashboard",
               url: "/Runtime/Runtime/Form/NR__MarketingRequest__Form/"
             },
             {
               icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
-              name: "Dashboard",
+              name: "My Recent Submission",
+              url: "/Runtime/Runtime/Form/MainDashboard"
+            },
+          ]
+        },
+        {
+          category: "Services",
+          links: [
+            {
+              icon: "/Runtime/Styles/Style%20profile/images/net/Human Capital Excellence.svg",
+              name: "Finance",
+              url: "/Runtime/Runtime/Form/NR__MarketingRequest__Form/"
+            },
+            {
+              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              name: "Pre - Qualification",
               url: "/Runtime/Runtime/Form/MainDashboard"
             },
             {
-              icon: "/Runtime/Styles/Style%20profile/images/net/My Requests.svg",
-              name: "My Requests",
-              url: "/Runtime/Form/UserDashboard/"
+              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              name: "HR - General",
+              url: "/Runtime/Runtime/Form/MainDashboard"
             },
             {
-              icon: "/Runtime/Styles/Style%20profile/images/net/report-and-analytics.svg",
-              name: "Marketing Dashboard",
-              url: "/Runtime/Form/Marketing__Admin__Dashboard/?ServiceID=4"
-            }
+              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              name: "HR - Training",
+              url: "/Runtime/Runtime/Form/MainDashboard"
+            },
+            {
+              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              name: "HSSE - General",
+              url: "/Runtime/Runtime/Form/MainDashboard"
+            },
+            {
+              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              name: "HSSE - Airside",
+              url: "/Runtime/Runtime/Form/MainDashboard"
+            },
+            {
+              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              name: "HSSE - Landslide",
+              url: "/Runtime/Runtime/Form/MainDashboard"
+            },
+            {
+              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              name: "Knowledge Management",
+              url: "/Runtime/Runtime/Form/MainDashboard"
+            },
+            {
+              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              name: "E-Services",
+              url: "/Runtime/Runtime/Form/MainDashboard"
+            },
           ]
         }
       ];
