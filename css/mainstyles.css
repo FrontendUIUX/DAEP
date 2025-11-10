@@ -47,6 +47,31 @@ html body aside.sidebar {
     transform: translateX(-100%);
     animation: 1s fadeLeft forwards;
 }
+html body ul.links>li {
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+}
+.sideBarLinksGroup .icon {
+    width: 1.5rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+html body ul.links li .icon {
+    margin-right: 1rem;
+}
+.sideBarLinksGroup .icon img {
+    width: 100%;
+    height: auto;
+}
+.sideBarLinksGroup a {
+    font-size: 1.05rem;
+    color: var(--white);
+}
 /* SIDEBAR END */
 html:not(.designer) [name*="s_label"] {
     font-size: 1rem;
