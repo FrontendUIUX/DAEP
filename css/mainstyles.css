@@ -105,6 +105,17 @@ html:not(.designer) body.theme-entry [name*="s_textbox"]{
     padding: 0 1rem !important;
     position: relative;
 }
+[name*="s_textbox"] input.SourceCode-Forms-Controls-Web-TextBox {
+    position: absolute !important;
+    width: calc(100% - 2rem) !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    padding: 0 !important;
+    top: 0;
+    z-index: 1 !important;
+}
 [name*="s_textarea"] textarea {
     position: absolute !important;
     z-index: 1 !important;
