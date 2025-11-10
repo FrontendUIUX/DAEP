@@ -103,6 +103,20 @@ html:not(.designer) [name*="s_label"] {
     line-height: unset !important;
     text-wrap: auto;
 }
+html:not(.designer) .input-control.select-box.dropdown-box
+{
+    height: 100%;
+    min-height: 2rem !important;
+    width: calc(100% - 2rem) !important;
+}
+html:not(.designer) .input-control.select-box.dropdown-box .input-control-m-c, html:not(.designer) .input-control-buttons.styling-right.styling-inner-wrapper {
+    background-color: transparent !important;
+    border: none !important;
+    height: 100% !important;
+    min-height: 2rem !important;
+    display: flex;
+    align-items: center;
+}
 html:not(.designer) body.theme-entry [name*="s_textbox"]{
     border: 1px solid var(--borderColor) !important;
     background-color: var(--Textbox-background-color) !important;
