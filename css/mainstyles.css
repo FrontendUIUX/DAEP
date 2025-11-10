@@ -13,6 +13,17 @@
     font-family: "Lato Bold";
     src: url("../fonts/Lato-Bold.ttf");
 }
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
 /* SIDEBAR START */
 html body aside.sidebar {
     width: 19.5rem;
@@ -27,6 +38,7 @@ html body aside.sidebar {
     opacity: 0;
     transition: all .3s ease-in-out;
     transform: translateX(-100%);
+    animation: 1s fadeLeft forwards;
 }
 /* SIDEBAR END */
 html:not(.designer) [name*="s_label"] {
