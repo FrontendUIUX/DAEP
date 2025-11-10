@@ -187,6 +187,12 @@ html:not(.designer) [name*="s_textbox"], html:not(.designer) [name*="s_dropdown"
     padding: 0 1rem !important;
     position: relative;
 }
+/* VIEW HEADER START */
+html:not(.designer) body.theme-entry .view [name*="s_collapse"] .panel-header{
+    background-color:transparent!important;
+    
+}
+/* VIEW HEADER END */
 @media (min-width: 992px) {
     html:not(.designer) body {
         margin-left: 19.5rem;
