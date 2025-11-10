@@ -36,47 +36,47 @@ document.addEventListener("DOMContentLoaded", () => {
             {
               icon: "/Runtime/Styles/Style%20profile/images/net/Human Capital Excellence.svg",
               name: "Finance",
-              url: "/Runtime/Runtime/Form/NR__MarketingRequest__Form/"
+              url: "#"
             },
             {
               icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
               name: "Pre - Qualification",
-              url: "/Runtime/Runtime/Form/MainDashboard"
+              url: "#"
             },
             {
               icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
               name: "HR - General",
-              url: "/Runtime/Runtime/Form/MainDashboard"
+              url: "#"
             },
             {
               icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
               name: "HR - Training",
-              url: "/Runtime/Runtime/Form/MainDashboard"
+              url: "#"
             },
             {
               icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
               name: "HSSE - General",
-              url: "/Runtime/Runtime/Form/MainDashboard"
+              url: "#"
             },
             {
               icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
               name: "HSSE - Airside",
-              url: "/Runtime/Runtime/Form/MainDashboard"
+              url: "#"
             },
             {
               icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
               name: "HSSE - Landslide",
-              url: "/Runtime/Runtime/Form/MainDashboard"
+              url: "#"
             },
             {
               icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
               name: "Knowledge Management",
-              url: "/Runtime/Runtime/Form/MainDashboard"
+              url: "#"
             },
             {
-              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              icon: "../images/sidebar/E-Services.svg",
               name: "E-Services",
-              url: "/Runtime/Runtime/Form/MainDashboard"
+              url: "#"
             },
           ]
         }
