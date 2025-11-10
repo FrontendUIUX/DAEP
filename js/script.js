@@ -54,17 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
               url: "#"
             },
             {
-              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              icon: "/Runtime/Styles/DAEP/images/sidebar/HSSE - General.svg",
               name: "HSSE - General",
               url: "#"
             },
             {
-              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              icon: "/Runtime/Styles/DAEP/images/sidebar/HSSE - Airside.svg",
               name: "HSSE - Airside",
               url: "#"
             },
             {
-              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              icon: "/Runtime/Styles/DAEP/images/sidebar/HSSE - Landslide.svg",
               name: "HSSE - Landslide",
               url: "#"
             },
