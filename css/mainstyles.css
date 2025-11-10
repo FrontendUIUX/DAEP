@@ -1,0 +1,74 @@
+:root{
+    --white:#ffffff;
+    --black:#000000;
+    --borderColor:#dfdfdf;
+    --regularFont:"Lato Regular";
+    --boldFont:"Lato Bold";
+}
+@font-face {
+    font-family: "Lato Regular";
+    src: url("../fonts/Lato-Regular.ttf");
+}
+@font-face {
+    font-family: "Lato Bold";
+    src: url("../fonts/Lato-Bold.ttf");
+}
+html:not(.designer) [name*="s_label"] {
+    font-size: 1rem;
+    color: var(--black);
+    font-family: var(--regularFont);
+    transition: all .3s ease-in-out;
+    height: unset !important;
+    min-height: unset !important;
+    line-height: unset !important;
+    text-wrap: auto;
+}
+html:not(.designer) body.theme-entry [name*="s_textbox"]{
+    border: 1px solid var(--borderColor) !important;
+    background-color: var(--Textbox-background-color) !important;
+    font-size: 1rem !important;
+    border-radius: .5rem !important;
+    padding: .4rem 1rem !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: var(--regularFont);
+    width: 100%;
+    min-height: 3.5rem !important;
+    height: 3.5rem !important;
+    align-content: center;
+    padding: 0 1rem !important;
+    position: relative;
+}
+html:not(.designer) [name*="s_button"],
+html:not(.designer) .theme-entry .dialog .popup-footer .SourceCode-Forms-Controls-Web-Button {
+    border-radius: .5rem !important;
+    padding: 0.6rem 2.4rem !important;
+    font-size: 1rem;
+    font-family: var(--regularFont);
+    height: unset;
+    min-height: unset;
+    width: 100%;
+    margin: .3rem 0;
+}
+@media(min-width: 1600px){
+    html:not(.designer) [name*="s_label"] {
+        font-size: 1vw;
+    }
+    html:not(.designer) body.theme-entry [name*="s_textbox"]{
+        font-size: 1vw !important;
+        border-radius: .5vw !important;
+        padding: .4vw 1vw !important;
+        min-height: 3.5vw !important;
+        height: 3.5vw !important;
+        padding: 0 1vw !important;
+    }
+    html:not(.designer) [name*="s_button"],
+    html:not(.designer) .theme-entry .dialog .popup-footer .SourceCode-Forms-Controls-Web-Button {
+        border-radius: .5vw !important;
+        padding: 0.6vw 2.4vw !important;
+        font-size: 1vw;
+        margin: .3vw 0;
+    }
+}
