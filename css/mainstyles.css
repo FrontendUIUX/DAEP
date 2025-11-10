@@ -24,6 +24,10 @@
         transform: translateX(0%);
     }
 }
+html:not(.designer), body.theme-entry {
+    font-size: 14px !important;
+    font-family: var(--regularFont) !important;
+}
 html:not(.designer) body.theme-entry{
     background-color: var(--white)!important;
 }
@@ -82,6 +86,18 @@ html:not(.designer) .theme-entry .dialog .popup-footer .SourceCode-Forms-Control
     min-height: unset;
     width: 100%;
     margin: .3rem 0;
+}
+@media (min-width: 992px) {
+    html:not(.designer) body {
+        margin-left: 19.5rem;
+        width: calc(100% - 19.5rem);
+    }
+}
+@media(min-width: 1200px){
+    html:not(.designer) body {
+        margin-left: 18rem;
+        width: calc(100% - 18rem);
+    }
 }
 @media(min-width: 1600px){
     html:not(.designer) [name*="s_label"] {
