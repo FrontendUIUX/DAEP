@@ -13,6 +13,22 @@
     font-family: "Lato Bold";
     src: url("../fonts/Lato-Bold.ttf");
 }
+/* SIDEBAR START */
+html body aside.sidebar {
+    width: 19.5rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem 1.5rem;
+    border-right: 1.5px solid rgb(0 33 52 / 10%);
+    z-index: 2;
+    background-image: url("../images/sidebarPattern.png");
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    transform: translateX(-100%);
+}
+/* SIDEBAR END */
 html:not(.designer) [name*="s_label"] {
     font-size: 1rem;
     color: var(--black);

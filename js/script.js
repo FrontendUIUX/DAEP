@@ -1,16 +1,19 @@
 // Sidebar Start 
 document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(function () {
+  setTimeout(() => {
     try {
-      // ===== Get user info from K2 SourceCode object =====
-      const fqn = SourceCode.Forms.Settings.User.FQN;
-      const userName = fqn.split("\\").pop();
+      /* ============================================================
+         1. Retrieve User Information from K2
+      ============================================================ */
+      const fqn = SourceCode?.Forms?.Settings?.User?.FQN || "";
+      const userName = fqn ? fqn.split("\\").pop() : "User";
 
-      // ===== Get department text from form label =====
       const departmentEl = document.querySelector("[name*='User_Department_DataLabel']");
       const department = departmentEl ? departmentEl.textContent.trim() : "Unknown Department";
 
-      // ===== Sidebar configuration (dynamic links) =====
+      /* ============================================================
+         2. Sidebar Configuration
+      ============================================================ */
       const sidebarConfig = [
         {
           category: "Main Links",
@@ -34,110 +37,87 @@ document.addEventListener("DOMContentLoaded", () => {
               icon: "/Runtime/Styles/Style%20profile/images/net/report-and-analytics.svg",
               name: "Marketing Dashboard",
               url: "/Runtime/Form/Marketing__Admin__Dashboard/?ServiceID=4"
-            },
-            // {
-            //   icon: "/Runtime/Styles/Style%20profile/images/net/report-and-analytics.svg",
-            //   name: "Reports & Analytics",
-            //   url: "#",
-            //   children: [
-            //     { icon: "/Runtime/Styles/Style%20profile/images/net/sada 1.svg", name: "Marketing Dashboard", url: "#" },
-            //     { icon: "/Runtime/Styles/Style%20profile/images/net/sada 1.svg", name: "Communication Dashboard", url: "#" },
-            //     { icon: "/Runtime/Styles/Style%20profile/images/net/sada 1.svg", name: "Information Technology Dashboard", url: "#" }
-            //   ]
-            // }
+            }
           ]
-        },
-        // {
-        //   category: "Departments",
-        //   links: [
-        //     { icon: "/Runtime/Styles/Style%20profile/images/net/Retail Banking.svg", name: "Retail & Digital Banking", url: "#", children: [] },
-        //     { icon: "/Runtime/Styles/Style%20profile/images/net/Human Capital Excellence.svg", name: "Marketing & Corporate", url: "/Runtime/Runtime/Form/NR__MarketingRequest__Form/", children: [] },
-        //     { icon: "/Runtime/Styles/Style%20profile/images/net/Shariah.svg", name: "Shariah", url: "#", children: [] },
-        //     { icon: "/Runtime/Styles/Style%20profile/images/net/information-technology.svg", name: "Information Technology", url: "#", children: [] },
-        //     { icon: "/Runtime/Styles/Style%20profile/images/net/Operations.svg", name: "Operations", url: "#", children: [] },
-        //     { icon: "/Runtime/Styles/Style%20profile/images/net/facilities-management.svg", name: "Facilities Management", url: "#", children: [] },
-        //     { icon: "/Runtime/Styles/Style%20profile/images/net/Business Acquistion.svg", name: "Human Capital", url: "#", children: [] },
-        //     { icon: "/Runtime/Styles/Style%20profile/images/net/risk-management.svg", name: "Risk Management", url: "#", children: [] }
-        //   ]
-        // }
+        }
       ];
 
-      // ===== Sidebar HTML skeleton =====
+      /* ============================================================
+         3. Build Sidebar HTML
+      ============================================================ */
       document.body.insertAdjacentHTML("beforeend", `
         <aside class="sidebar">
           <div class="userSettings d-flex align-items-center">
             <div class="userProfile d-none d-lg-flex align-items-center">
               <div class="userProfilePhoto">
-                <img src="/Runtime/Styles/Style%20profile/images/net/Userthumb.png" alt="${userName}" class="profilePhoto" />
+                <img src="/Runtime/Styles/Style%20profile/images/net/Userthumb.png" alt="${userName}" class="profilePhoto"/>
               </div>
               <div class="userInformations d-flex flex-column">
                 <span class="username">${userName}</span>
                 <span class="userPosition">${department}</span>
               </div>
             </div>
+
             <button class="notifications" data-bs-toggle="modal" data-bs-target="#notificationModal">
               <img src="/Runtime/Styles/Style%20profile/images/net/Notification.svg"/>
             </button>
           </div>
+
           <div class="sideBarLinksGroup"></div>
+
           <div class="toggle-container">
             <span class="toggle-label">Light Mode</span>
             <label class="switch">
               <input type="checkbox" id="modeToggle">
               <span class="slider">
-                <span class="icon"><img class="sun-img" src="/Runtime/Styles/Style%20profile/images/net/Sun.svg" alt=""></span>
+                <span class="icon">
+                  <img class="sun-img" src="/Runtime/Styles/Style%20profile/images/net/Sun.svg" alt="">
+                </span>
               </span>
             </label>
           </div>
         </aside>
+
         <div class="overlayShadow" style="display:none;"></div>
+
         <aside class="subPanel">
           <div class="closeSubpanel">X</div>
           <div class="subPanelHeader"><h5 class="subSectionTitle"></h5></div>
           <div class="subPanelBody"><ul></ul></div>
         </aside>
-        <!-- USER PROFILE POPUP START -->
-    <div class="modal user-modal" id="userModal">
-        <div class="modal-dialog modal-dialog-end">
+
+        <!-- USER PROFILE MODAL -->
+        <div class="modal user-modal" id="userModal">
+          <div class="modal-dialog modal-dialog-end">
             <div class="modal-content">
-                <div class="modal-header">
-                    <div class="user-modal-header">
-                        <img src="/Runtime/Styles/Style%20profile/images/net/UserProfile.png" alt="">
-                        <div class="name-email">
-                            <p class="userNAME">${userName}</p>
-                            <p class="user-mail"></p>
-                        </div>
-
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="modal-header">
+                <div class="user-modal-header">
+                  <img src="/Runtime/Styles/Style%20profile/images/net/UserProfile.png" alt="">
+                  <div class="name-email">
+                    <p class="userNAME">${userName}</p>
+                    <p class="user-mail"></p>
+                  </div>
                 </div>
-                <div class="modal-body">
-                    <div class="user-settings">
-                     <!--  <a href="#" class="viewProfile">
-                            <img src="/Runtime/Styles/Style%20profile/images/net/user.svg" alt="user">
-                            <p>View Profile</p>
-                        </a>
-                        <a href="#" class="account-settings">
-                            <img src="/Runtime/Styles/Style%20profile/images/net/settings.svg" alt="settings">
-                            Account Settings
-                        </a> -->
-                        <div href="" class="button buttonstyle-primary sign-out" id="LogoutLink"" onclick="CustomK2Logout()";>
-                            <img src="/Runtime/Styles/Style%20profile/images/net/Sign Out.svg" alt="sign-out">
-                            Sign Out
-                        </dvi>
-                    </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
 
+              <div class="modal-body">
+                <div class="user-settings">
+                  <div class="button buttonstyle-primary sign-out" id="LogoutLink" onclick="CustomK2Logout()">
+                    <img src="/Runtime/Styles/Style%20profile/images/net/Sign Out.svg" alt="sign-out">
+                    Sign Out
+                  </div>
                 </div>
+              </div>
 
             </div>
+          </div>
         </div>
-    </div>
-    <!-- USER PROFILE POPUP END -->
       `);
-  
 
-
-      // ===== Render Sidebar Links =====
+      /* ============================================================
+         4. Render Sidebar Links
+      ============================================================ */
       const sidebarContainer = document.querySelector(".sideBarLinksGroup");
       const currentPath = window.location.pathname;
 
@@ -155,13 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         section.links.forEach(link => {
           const li = document.createElement("li");
-          if (link.children && link.children.length > 0) {
-            li.classList.add("isSubMenu");
-          } else {
-            li.classList.add("noSubChildren");
-          }
+          li.classList.add(link.children ? "isSubMenu" : "noSubChildren");
 
-          // mark active link based on current page
+          // Mark active page
           if (link.url && currentPath === new URL(link.url, window.location.origin).pathname) {
             li.classList.add("active");
           }
@@ -170,22 +146,24 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="icon"><img src="${link.icon}" alt=""></div>
             <a href="${link.url || '#'}">${link.name}</a>
           `;
-          // ====== Add disabled class if href is empty or '#' ======
+
           const anchor = li.querySelector("a");
-          if (!anchor.getAttribute("href") || anchor.getAttribute("href").trim() === "#" || anchor.getAttribute("href").trim() === "") {
+
+          // Disable invalid links
+          if (!link.url || link.url === "#") {
             anchor.classList.add("disabled");
+            anchor.setAttribute("tabindex", "-1");
             anchor.setAttribute("aria-disabled", "true");
-            anchor.setAttribute("tabindex", "-1"); // remove from tab order
           }
 
-          // Prevent clicks on disabled links
-          anchor.addEventListener("click", (e) => {
+          // Prevent click on disabled links
+          anchor.addEventListener("click", e => {
             if (anchor.classList.contains("disabled")) {
               e.preventDefault();
               e.stopPropagation();
-              // optional: show tooltip or message
             }
           });
+
           ul.appendChild(li);
         });
 
@@ -193,31 +171,33 @@ document.addEventListener("DOMContentLoaded", () => {
         sidebarContainer.appendChild(category);
       });
 
-      // ===== Submenu rendering logic =====
+      /* ============================================================
+         5. Submenu (Side Panel) Logic
+      ============================================================ */
       const subPanel = document.querySelector(".subPanel");
       const subPanelList = subPanel.querySelector(".subPanelBody ul");
-      const subPanelTitle = subPanel.querySelector(".subPanelHeader .subSectionTitle");
+      const subPanelTitle = subPanel.querySelector(".subSectionTitle");
       const overlayShadow = document.querySelector(".overlayShadow");
       const closeSubpanelBtn = subPanel.querySelector(".closeSubpanel");
 
-      function updateOverlay() {
+      const updateOverlay = () => {
         overlayShadow.style.display = subPanel.classList.contains("active") ? "block" : "none";
-      }
+      };
 
       document.querySelectorAll(".isSubMenu").forEach(menu => {
         menu.addEventListener("click", e => {
           e.preventDefault();
-          const title = menu.querySelector("a").innerText.trim();
 
-          // find config
-          let found = null;
-          sidebarConfig.forEach(sec => {
-            sec.links.forEach(l => {
-              if (l.name === title) found = l;
+          const title = menu.querySelector("a").innerText.trim();
+          let menuConfig = null;
+
+          sidebarConfig.forEach(section => {
+            section.links.forEach(l => {
+              if (l.name === title) menuConfig = l;
             });
           });
 
-          if (!found || !found.children || found.children.length === 0) {
+          if (!menuConfig?.children?.length) {
             subPanel.classList.remove("active");
             updateOverlay();
             return;
@@ -226,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
           subPanelTitle.textContent = title;
           subPanelList.innerHTML = "";
 
-          found.children.forEach(child => {
+          menuConfig.children.forEach(child => {
             const li = document.createElement("li");
             li.innerHTML = `
               <div class="icon"><img src="${child.icon}" alt=""></div>
@@ -240,18 +220,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-      if (closeSubpanelBtn) {
-        closeSubpanelBtn.addEventListener("click", () => {
-          subPanel.classList.remove("active");
-          updateOverlay();
-        });
-      }
+      closeSubpanelBtn.addEventListener("click", () => {
+        subPanel.classList.remove("active");
+        updateOverlay();
+      });
 
-    } catch (e) {
-      console.error("Error rendering sidebar:", e);
+    } catch (err) {
+      console.error("Error rendering sidebar:", err);
     }
   }, 1000);
 });
+
 // Sidebar End 
 
 //  SIDEBAR SUBMENU SCRIPT (SAFE)
