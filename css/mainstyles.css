@@ -47,6 +47,9 @@ html body aside.sidebar {
     transform: translateX(-100%);
     animation: 1s fadeLeft forwards;
 }
+html body ul.links{
+    padding:0;
+}
 html body ul.links>li {
     display: flex;
     align-items: center;
@@ -71,6 +74,7 @@ html body ul.links li .icon {
 .sideBarLinksGroup a {
     font-size: 1.05rem;
     color: var(--white);
+    text-decoration: none;
 }
 /* SIDEBAR END */
 html:not(.designer) [name*="s_label"] {
