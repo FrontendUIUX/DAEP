@@ -87,6 +87,22 @@ html:not(.designer) [name*="s_label"] {
     line-height: unset !important;
     text-wrap: auto;
 }
+html:not(.designer) [name*="s_dropdown"] [name*="s_label"] {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 !important;
+}
+html:not(.designer) [name*="s_label"] {
+    font-size: 1rem;
+    color: var(--Light-black);
+    font-family: 'AlinmaTheSans-Plain';
+    transition: all .3s ease-in-out;
+    height: unset !important;
+    min-height: unset !important;
+    line-height: unset !important;
+    text-wrap: auto;
+}
 html:not(.designer) body.theme-entry [name*="s_textbox"]{
     border: 1px solid var(--borderColor) !important;
     background-color: var(--Textbox-background-color) !important;
