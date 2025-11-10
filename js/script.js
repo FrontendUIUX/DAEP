@@ -69,12 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
               url: "#"
             },
             {
-              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              icon: "/Runtime/Styles/DAEP/images/sidebar/Knowledge Management.svg",
               name: "Knowledge Management",
               url: "#"
             },
             {
-              icon: "../images/sidebar/E-Services.svg",
+              icon: "/Runtime/Styles/DAEP/images/sidebar/E-Services.svg",
               name: "E-Services",
               url: "#"
             },
