@@ -101,6 +101,19 @@ html:not(.designer) body.theme-entry [name*="s_textbox"]{
     padding: 0 1rem !important;
     position: relative;
 }
+[name*="s_textarea"] textarea {
+    position: absolute !important;
+    z-index: 1 !important;
+    width: calc(100% - 2rem) !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    min-height: 3.5rem !important;
+    height: auto;
+    padding: 0 !important;
+    top: -2.3rem;
+    font-family: var(--regularFont) !important;
+    color: var(--black) !important;
+}
 html:not(.designer) [name*="s_button"],
 html:not(.designer) .theme-entry .dialog .popup-footer .SourceCode-Forms-Controls-Web-Button {
     border-radius: .5rem !important;
