@@ -105,17 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <div class="sideBarLinksGroup"></div>
 
-          <div class="toggle-container">
-            <span class="toggle-label">Light Mode</span>
-            <label class="switch">
-              <input type="checkbox" id="modeToggle">
-              <span class="slider">
-                <span class="icon">
-                  <img class="sun-img" src="/Runtime/Styles/Style%20profile/images/net/Sun.svg" alt="">
-                </span>
-              </span>
-            </label>
-          </div>
         </aside>
 
         <div class="overlayShadow" style="display:none;"></div>
