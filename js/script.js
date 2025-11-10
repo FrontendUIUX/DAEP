@@ -34,22 +34,22 @@ document.addEventListener("DOMContentLoaded", () => {
           category: "Services",
           links: [
             {
-              icon: "/Runtime/Styles/Style%20profile/images/net/Human Capital Excellence.svg",
+              icon: "/Runtime/Styles/DAEP/images/sidebar/Finance.svg",
               name: "Finance",
               url: "#"
             },
             {
-              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              icon: "/Runtime/Styles/DAEP/images/sidebar/Pre - Qualification.svg",
               name: "Pre - Qualification",
               url: "#"
             },
             {
-              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              icon: "/Runtime/Styles/DAEP/images/sidebar/HR - General.svg",
               name: "HR - General",
               url: "#"
             },
             {
-              icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
+              icon: "/Runtime/Styles/DAEP/images/sidebar/HR - Training.svg",
               name: "HR - Training",
               url: "#"
             },
