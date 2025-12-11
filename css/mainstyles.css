@@ -1,18 +1,132 @@
-:root{
-    --white:#ffffff;
-    --black:#000000;
-    --borderColor:#dfdfdf;
-    --regularFont:"Lato Regular";
-    --boldFont:"Lato Bold";
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --borderColor: #dfdfdf;
+    --red:#E22726;
+    --regularFont: "Lato Regular";
+    --boldFont: "Lato Bold";
+    --sidebarPadding: 2rem 1.5rem;
+    --bodyLeftPadding_sidebarWidth: 19.5rem;
+    --bodyPaddingTop_headerHeight: 6rem;
+    --textbox_dropdown_textarea_fontSize: 1rem;
+    --textbox_dropdown_textarea_borderRadius: .5rem;
+    --textbox_dropdown_textarea_minHeight: 3.5rem;
+    --textbox_dropdown_height: 3.5rem;
+    --tableGap: 1rem;
+    --s_collapse_border:1px solid rgb(0 0 0 / 10%);
+    --s_collapse_borderRadius:1.5rem;
+    --borderRadius_05:0.5rem;
+    --fs-h1: clamp(1.9rem, 1.6vw + 0.9rem, 2.3rem);
+    --fs-h2: clamp(1.65rem, 1.3vw + 0.85rem, 2rem);
+    --fs-h3: clamp(1.4rem, 1.1vw + 0.75rem, 1.7rem);
+    --fs-h4: clamp(1.2rem, 0.95vw + 0.7rem, 1.5rem);
+    --fs-h5: clamp(1.05rem, 0.85vw + 0.6rem, 1.35rem);
+    --fs-h6: clamp(0.95rem, 0.75vw + 0.55rem, 1.2rem);
+    --fs-h7: clamp(0.85rem, 0.7vw + 0.45rem, 1rem);
+    --fs-body: clamp(0.95rem, 0.45vw + 0.85rem, 1.05rem);
+    --fs-button: clamp(0.85rem, 0.35vw + 0.85rem, 0.95rem);
+    --fs-caption: clamp(0.85rem, 0.3vw + 0.8rem, 0.9rem);
+}
+.runtime-view .sidebar{
+    display:none!important;
+}
+html:not(.designer) [name*="s_asterik"]{
+    color:var(--red)!important;
+    height: unset!important;
+    min-height: unset!important;
+    padding: 0!Important;
+}
+html:not(.designer) body.theme-entry .grid-column-headers{
+    background:linear-gradient(to bottom, #ffffff, #f7f7f7f)!important;
+}
+.theme-entry .grid table.grid-content-table.zebra-stripes tr:nth-child(even){
+    background-color:transparent!important;
+}
+.theme-entry .grid table.grid-content-table tr:not(:last-child) td{
+    border-bottom:1px solid rgb(0 0 0 / 12%)!important;
+}
+html:not(.designer) body .theme-entry.runtime-form span.runtime-list-item{
+    color:#002134!important;
+    font-size: var(--fs-caption)!important;
+    font-family: var(--regularFont)!important;
+}
+html:not(.designer) body.theme-entry .grid-column-headers td div{
+    color:#000000!important;
+    font-size:1rem!important;
+}
+span.runtime-list-item {
+    font-size: 1rem!important;
+    font-family: var(--regularFont)!important;
+}
+html:not(.designer) body.theme-entry .grid-content-cell-wrapper a{
+    color:var(--red)!important;
+    font-family:var(--boldFont)!important;
+}
+html:not(.designer) .on-focus [name*="s_asterik"],
+html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_asterik"],
+html:not(.designer) [name*="s_textarea"]:has([readonly]) [name*="s_asterik"]{
+    color:var(--red)!important;
+    transform:translateY(-.7rem);
+}
+html:not(.designer) [name*="s_dropdown"]:has(.read-only) [name*="s_asterik"],
+html:not(.designer) [name*="s_calendar"]:has(.read-only) [name*="s_asterik"]{
+    color:var(--red)!important;
+    transform:translateY(.7vw);
+}
+body.theme-entry.runtime-view{
+    padding-left: 0!important;
+    padding-top: 0!important;
+}
+.sub-view{
+z-index:5!important;
+}
+.theme-entry .file-wrapper .file-watermark{
+ color:var(--black)!important;
+ opacity: .5!important;
+ display: block!important;
+ font-size: 1rem;
+}
+.theme-entry .popup-header-buttons a.close,
+.theme-entry .popup-header-buttons a.close:hover{
+        background-image: url("/Runtime/Styles/DAEP/images/svg/close.svg")!important;
+        background-position: center;
+        background-size:contain;
+    }
+html:not(.designer) .popup-header{
+    padding:1rem;
+    position:relative!important;
+    top:0;
+    left:0;
+    height:6rem!important;
+    background-color: #F7F7F7;
+    background-image:url("/Runtime/Styles/DAEP/images/view-header-pattern.png");
+}
+.popup-header-button-bar-wrapper{
+    display:flex!important;
+    align-items:center;
+    flex-direction:row;
+}
+html:not(.designer) .popup-body{
+    top:6rem!important;
+}
+.popup-header-button-bar-wrapper a{
+    margin:0!important;
+    /* height: 2rem!important; */
+    /* width: 2rem!important; */
+    min-width:fit-content;
 }
 @font-face {
     font-family: "Lato Regular";
     src: url("/Runtime/Styles/DAEP/fonts/Lato-Regular.ttf");
+    font-display: swap;
 }
+
 @font-face {
     font-family: "Lato Bold";
     src: url("/Runtime/Styles/DAEP/fonts/Lato-Bold.ttf");
+    font-display: swap;
 }
+
 @keyframes fadeLeft {
     0% {
         opacity: 0;
@@ -24,32 +138,237 @@
         transform: translateX(0%);
     }
 }
-html:not(.designer), body.theme-entry {
+.sub-view .sidebar{
+    display:none!important;
+}
+ .theme-entry .drop-menu{
+z-index:999!important;
+}
+/* ATTACHMENTS START */
+[name*="s_link"]{
+font-size:1rem;
+}
+.file-delete {
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+html:not(.designer) body.theme-entry [name*="s_attachment"]{
+    border:1px solid var(--borderColor)!important;
+    border-radius:var(--borderRadius_05)!important;
+}
+.file-thumbnail,
+.image-thumbnail,
+.file-tn-cell {
+    display: none !important;
+    padding: 0 !important;
+}
+td.file-info-cell.file-ellipsis .file-info.file-ellipsis {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: var(--boldFont);
+    font-size: 1rem !important;
+}
+/* ATTACHMENTS END */
+html:not(.designer) .filterContainer {
+    display: flex;
+    justify-content: space-between;
+}
+html:not(.designer) .filterChosen.filter {
+    display: none !important;
+}
+.theme-entry .grid table.grid-column-header-table{
+    border: 1px solid rgb(0 0 0 / 15%);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    overflow: hidden;
+}
+.theme-entry .grid .grid-column-header-cell .grid-column-header-text{
+    font-size: var(--fs-caption)!important;
+    font-family: var(--regularFont)!important;
+}
+.grid-body-content table{
+    border: 1px solid rgb(0 0 0 / 15%);
+    border-top:none;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    overflow: hidden;
+}
+
+.theme-entry .grid-toolbars .input-control.select-box {
+    height: 3rem;
+    border: 1px solid var(--borderColor) !important;
+    border-radius: .5rem !important;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+.quickSearch.filter::before {
+    content: "Search by:";
+    position: relative;
+    left: 0;
+    width: fit-content;
+    color: #131313;
+    font-size: 1rem;
+    font-family: var(--regularFont) !important;
+}
+.filterTxt .input-control-m-c, .filterTxt input {
+    border: 1px solid var(--borderColor) !important;
+    font-size: 1rem !important;
+    border-radius: .5rem !important;
+    padding: .4rem 1rem !important;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    font-family: var(--regularFont) !important;
+    width: 100%;
+    min-height: 3rem !important;
+    height: 3rem !important;
+}
+html:not(.designer) .input-control.text-input .input-control-m-c {
+    border: none !important;
+}
+.theme-entry .SourceCode-Forms-Controls-Web-ControlPack-ListBox .stylewrapper{
+    border:1px solid rgb(0 0 0 / 15%)!important;
+     border-radius:1rem;
+}
+html:not(.designer) [name*="s_text"] [name*="s_label"],
+html:not(.designer) [name*="s_textarea"] [name*="s_label"] {
+    position: relative;
+    z-index: 0 !important;
+}
+html:not(.designer) body.theme-entry [name*="s_checkboxContainer"]{
+    display:flex!important;
+    align-items:center!important;
+}
+html:not(.designer) body.theme-entry [name*="ButtonsContainer"]{
+display:flex;
+align-items:center;
+gap:1rem;
+}
+html:not(.designer),
+html:not(.designer) body.theme-entry {
     font-size: 14px !important;
     font-family: var(--regularFont) !important;
 }
-html:not(.designer) body.theme-entry{
-    background-color: var(--white)!important;
+
+body.theme-entry *{
+    font-family: var(--regularFont) !important;
 }
+html:not(.designer) body.theme-entry {
+    background-color: var(--white) !important;
+    padding-left: var(--bodyLeftPadding_sidebarWidth);
+    padding-top: var(--bodyPaddingTop_headerHeight);
+}
+html:not(.designer) body.theme-entry [name*="tableGap"]{
+    gap: var(--tableGap);
+}
+/* HEADER START */
+header {
+    position: fixed;
+    top: 0;
+    left: var(--bodyLeftPadding_sidebarWidth);
+    width: calc(100% - var(--bodyLeftPadding_sidebarWidth));
+    background-color: rgb(255 255 255 / 80%);
+    z-index: 1;
+    height: var(--bodyPaddingTop_headerHeight);
+    padding: 1rem;
+    border-bottom: 1px solid rgb(0 0 0 / 10%);
+    backdrop-filter: blur(5px);
+}
+header [name*="headerLeftSection"]{
+    display:flex;
+    flex-direction:column;
+}
+header [name*="headerRightSection"]{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+html:not(.designer) body.theme-entry header [name*="userDropDown"]{
+    width: 8rem!important;
+    border: 1px solid rgb(0 0 0 / 15%)!important;
+    border-radius: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0.5rem 0rem;
+}
+html:not(.designer) body.theme-entry .filterContainer .filterLabel{
+display:none;
+}
+     html:not(.designer) .on-focus[name*="s_calendar"] input[type=text].input-control{
+        font-size:.9rem;
+        top: 0.5rem!important;
+        padding:0;
+     }
+header [name*="headerTitle"] {
+    font-size: 1.4rem;
+    color: #000000;
+    font-family: var(--boldFont);
+}
+.sidebarHeader .logo {
+    width: 10rem!important;
+}
+.sidebarHeader .logo svg{
+    height:100%!important;
+    width:100%!important;
+    object-fit:contain;
+}
+header [name*="headerDescription"] {
+    font-size: 1rem;
+    color: rgb(0 0 0 / 80%);
+}
+header [name*="languageButton"]{
+    background-color: #FFFFFF!important;
+    border: 1px solid rgba(0, 0, 0, 0.08); /* 8% opacity */
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 100%!important;
+    height:3rem!important;
+    width:3rem!important;
+    min-height:3rem!important;
+    min-width: fit-content!important;
+}
+
+/* HEADER END */
 /* SIDEBAR START */
+.sidebarHeader{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:1rem;
+}
+
+.sidebarHeader button.collapseSidebar {
+    background-color: rgb(0 0 0 / 10%);
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    border-radius: .5rem;
+}
 html body aside.sidebar {
-    width: 19.5rem;
+    width: var(--bodyLeftPadding_sidebarWidth);
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    padding: 2rem 1.5rem;
+    padding: var(--sidebarPadding);
     border-right: 1.5px solid rgb(0 33 52 / 10%);
     z-index: 2;
-    background-image: url("../images/sidebarPattern.png");
+    background-image: url("/Runtime/Styles/DAEP/images/sidebarPattern.png");
     opacity: 0;
     transition: all .3s ease-in-out;
     transform: translateX(-100%);
     animation: 1s fadeLeft forwards;
 }
-html body ul.links{
-    padding:0;
+
+html body ul.links {
+    padding: 0;
 }
+
 html body ul.links>li {
     display: flex;
     align-items: center;
@@ -58,93 +377,76 @@ html body ul.links>li {
     margin-bottom: .5rem;
     border-radius: .5rem;
 }
+
 .sideBarLinksGroup .icon {
     width: 1.5rem;
     height: auto;
     display: flex;
     justify-content: center;
 }
+
 html body ul.links li .icon {
     margin-right: 1rem;
 }
+
 .sideBarLinksGroup .icon img {
     width: 100%;
     height: auto;
 }
+
 .sideBarLinksGroup a {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--white);
     text-decoration: none;
+    opacity: 1;
+    display: block;
 }
+
 /* SIDEBAR END */
-html:not(.designer) [name*="s_label"] {
-    font-size: 1rem;
+/* COLLAPSE VIEW START */
+
+html:not(.designer) body.theme-entry .view [name*="s_collapse"]{
+    border: var(--s_collapse_border);
+    border-radius: var(--s_collapse_borderRadius);
+    overflow: hidden;
+}
+html:not(.designer) body.theme-entry .view [name*="s_collapse"] .panel-header-wrapper,
+html:not(.designer) body.theme-entry .view [name*="s_collapse"] .grid-header-wrapper{
+    background-color: #F7F7F7;
+    background-image:url("/Runtime/Styles/DAEP/images/view-header-pattern.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    padding: 2rem 1rem;
+    height: 4rem !important;
+    min-height: 4rem !important;
+}
+html:not(.designer) body.theme-entry [name*="s_collapse"] .panel-body{
+    padding:1rem 1.3rem;
+}
+html:not(.designer) body.theme-entry [name*="s_collapse"] .grid-body,
+html:not(.designer) body.theme-entry [name*="s_collapse"] .grid-toolbars{
+    padding: 0rem 1.3rem 1.3rem;
+}
+html:not(.designer) body.theme-entry .view [name*="s_collapse"] .panel-header-wrapper .panel-header-text span,
+html:not(.designer) body.theme-entry .grid-header-wrapper .grid-header-text > span{
     color: var(--black);
-    font-family: var(--regularFont);
-    transition: all .3s ease-in-out;
-    height: unset !important;
-    min-height: unset !important;
-    line-height: unset !important;
-    text-wrap: auto;
+    font-size: 1.4rem;
+    font-family: var(--boldFont) !important;
 }
-html:not(.designer) [name*="s_dropdown"] [name*="s_label"] {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 !important;
-}
-html:not(.designer) [name*="s_label"] {
-    font-size: 1rem;
-    color: var(--Light-black);
-    font-family: 'AlinmaTheSans-Plain';
-    transition: all .3s ease-in-out;
-    height: unset !important;
-    min-height: unset !important;
-    line-height: unset !important;
-    text-wrap: auto;
-}
-html:not(.designer) .input-control.select-box.dropdown-box
-{
-    height: 100%;
-    min-height: 2rem !important;
-    width: calc(100% - 2rem) !important;
-}
-html:not(.designer) .input-control.select-box.dropdown-box .input-control-m-c, html:not(.designer) .input-control-buttons.styling-right.styling-inner-wrapper {
-    background-color: transparent !important;
-    border: none !important;
-    height: 100% !important;
-    min-height: 2rem !important;
-    display: flex;
-    align-items: center;
-}
-html:not(.designer) body.theme-entry [name*="s_textbox"]{
+
+/* COLLAPSE VIEW END */
+html:not(.designer) [name*="s_textarea"] {
     border: 1px solid var(--borderColor) !important;
-    background-color: var(--Textbox-background-color) !important;
-    font-size: 1rem !important;
-    border-radius: .5rem !important;
+    font-size: var(--textbox_dropdown_textarea_fontSize) !important;
+    border-radius: var(--textbox_dropdown_textarea_borderRadius) !important;
     padding: .4rem 1rem !important;
-    padding: 0 !important;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    font-family: var(--regularFont);
+    font-family: var(--regularFont) !important;
     width: 100%;
-    min-height: 3.5rem !important;
-    height: 3.5rem !important;
-    align-content: center;
-    padding: 0 1rem !important;
+    min-height: var(--textbox_dropdown_textarea_minHeight) !important;
     position: relative;
-}
-[name*="s_textbox"] input.SourceCode-Forms-Controls-Web-TextBox {
-    position: absolute !important;
-    width: calc(100% - 2rem) !important;
-    border: 0 !important;
-    background-color: transparent !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    padding: 0 !important;
-    top: 0;
-    z-index: 1 !important;
 }
 [name*="s_textarea"] textarea {
     position: absolute !important;
@@ -157,8 +459,104 @@ html:not(.designer) body.theme-entry [name*="s_textbox"]{
     padding: 0 !important;
     top: -2.3rem;
     font-family: var(--regularFont) !important;
+}
+html:not(.designer) [name*="s_label"],
+html:not(.designer) body.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label{
+    font-size: 1rem;
+    color: var(--black);
+    font-family: var(--regularFont);
+    transition: all .3s ease-in-out;
+    height: unset !important;
+    min-height: unset !important;
+    line-height: unset !important;
+    text-wrap: auto;
+}
+[name*="s_dropdown"] [name*="s_label"]{
+    z-index:0;
+}
+[name*="s_dropdown"] .select-box{
+    z-index:3;
+}
+html:not(.designer) [name*="s_calendar"]:not(.on-focus) .input-control-buttons,
+html:not(.designer) [name*="s_dropdown"]:not(.on-focus) .input-control-buttons{
+    transform:translateY(-25%);
+}
+html:not(.designer) [name*="s_calendar"] .input-control-buttons.styling-right.styling-inner-wrapper{
+    display:block!important;
+    position: relative!important;
+    width: 2rem;
+    right: -1rem;
+    align-content: center;
+}
+.theme-entry .input-control.select-box .input-control-buttons a:hover{
+    background-color:transparent!important;
+}
+html:not(.designer) [name*="s_dropdown"] [name*="s_label"]{
+    position: relative;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    padding: 0 !important;
+}
+html .theme-entry [name*="s_calendar"] .input-control.select-box:not(.hide-buttons) .input-control-m-c{
+    height:unset!important;
+    min-height:unset!important;
+}
+html:not(.designer) [name*="s_calendar"] [name*="s_label"]{
+    position: relative;
+    top: 50%;
+    padding: 0 !important;
+}
+html:not(.designer) .input-control.select-box {
+    height: 100%;
+    min-height: 2rem !important;
+    width: calc(100% - 1.5rem) !important;
+}
+
+html:not(.designer) .input-control.select-box.dropdown-box .input-control-m-c,
+html:not(.designer) .input-control-buttons.styling-right.styling-inner-wrapper,
+html:not(.designer) [name*="s_calendar"]  .input-control-m-c{
+    background-color: transparent !important;
+    border: none !important;
+    height: 100% !important;
+    min-height: 2rem !important;
+    display: flex;
+    align-items: center;
+}
+
+[name*="s_textbox"] input.SourceCode-Forms-Controls-Web-TextBox {
+    position: absolute !important;
+    width: calc(100% - 2rem) !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    padding: 0 !important;
+    top: 0;
+    z-index: 1 !important;
+}
+[name*="s_textarea"] .input-control-m-c{
+    border:none!important;
+}
+[name*="s_textarea"] textarea {
+    position: absolute !important;
+    z-index: 1 !important;
+    width: calc(100% - 2rem) !important;
+    border: none !important;
+    background-color: transparent !important;
+    min-height: var(--textbox_dropdown_textarea_minHeight) !important;
+    height: auto;
+    padding: 0 !important;
+    top: -2.3rem;
+    font-family: var(--regularFont) !important;
     color: var(--black) !important;
 }
+ .on-focus[name*="s_textarea"] textarea,
+    html:not(.designer) .form.editingForm [name*="s_textarea"] textarea{
+        min-height: 2vw !important;
+        top: -0.5vw;
+        font-size: .85vw !important;
+        border-radius: .5vw;
+    }
 html:not(.designer) [name*="s_button"],
 html:not(.designer) .theme-entry .dialog .popup-footer .SourceCode-Forms-Controls-Web-Button {
     border-radius: .5rem !important;
@@ -167,55 +565,434 @@ html:not(.designer) .theme-entry .dialog .popup-footer .SourceCode-Forms-Control
     font-family: var(--regularFont);
     height: unset;
     min-height: unset;
-    width: 100%;
+    /* width: 100%; */
     margin: .3rem 0;
 }
-html:not(.designer) [name*="s_textbox"], html:not(.designer) [name*="s_dropdown"]{
+html:not(.designer) [name*="s_button s_primary_button"],
+html:not(.designer) .SFC.SourceCode-Forms-Controls-Web-Button.button{
+    background-color:#E22726!important;
+    color: var(--white)!important;
+}
+.theme-entry a.toolbar-button span.button-c span.button-text{
+    font-size:1rem;
+}
+html:not(.designer) [name*="s_button s_secondary_button"] {
+    background-color:#E2272612!important;
+    border-color:#E2272612!important;
+    color: #E22726!important;
+}
+html:not(.designer) [name*="s_textbox"],
+html:not(.designer) [name*="s_dropdown"],
+html:not(.designer) [name*="s_calendar"],
+html:not(.designer) [name*="s_textbox"].editor-cell.lastcellinrow,
+html:not(.designer) [name*="s_dropdown"].editor-cell.lastcellinrow,
+html:not(.designer) [name*="s_calendar"].editor-cell.lastcellinrow
+{
     border: 1px solid var(--borderColor) !important;
-    font-size: 1rem !important;
-    border-radius: .5rem !important;
-    padding: .4rem 1rem !important;
-    padding: 0 !important;
+    font-size: var(--textbox_dropdown_textarea_fontSize) !important;
+    border-radius: var(--textbox_dropdown_textarea_borderRadius) !important;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     font-family: var(--regularFont);
     width: 100%;
-    min-height: 3.5rem !important;
-    height: 3.5rem !important;
+    height: var(--textbox_dropdown_height) !important;
+    min-height: var(--textbox_dropdown_textarea_minHeight) !important;
     align-content: center;
     padding: 0 1rem !important;
     position: relative;
 }
+html:not(.designer) [name*="s_textarea"].editor-cell.lastcellinrow{
+    border: 1px solid var(--borderColor) !important;
+}
 /* VIEW HEADER START */
-html:not(.designer) body.theme-entry .view [name*="s_collapse"] .panel-header{
-    background-color:transparent!important;
-    
+.theme-entry a.collapse-vertical, .theme-entry a.collapse-vertical:focus, 
+.theme-entry #UsersConfig_secondPageOutside a.dropbutton.collapse-vertical, 
+.theme-entry #UsersConfig_secondPageOutside a.dropbutton.collapse-vertical:focus{
+    background-image:url("/Runtime/Styles/DAEP/images/collapse.png")!important;
+    height:3rem!important;
+    width:3rem!important;
+    background-size:contain!important;
+    background-repeat:no-repeat!important;
+    background-position: center!important;
 }
+.theme-entry a.expand-vertical, 
+.theme-entry a.expand-vertical:focus, 
+.theme-entry #UsersConfig_secondPageOutside a.dropbutton.expand-vertical, 
+.theme-entry #UsersConfig_secondPageOutside a.dropbutton.expand-vertical:focus{
+    background-image:url("/Runtime/Styles/DAEP/images/collapse.png")!important;
+    height:3rem!important;
+    width:3rem!important;
+    background-size:contain!important;
+    background-repeat:no-repeat!important;
+    background-position: center!important;
+    scale:-1;
+}
+html:not(.designer) body.theme-entry .view [name*="s_collapse"] .panel-header,
+html:not(.designer) body.theme-entry .view [name*="s_collapse"] .panel-header .panel-header-c{
+    background-color: transparent !important;
+    height: unset;
+    min-height: unset;
+    line-height: unset;
+}
+
 /* VIEW HEADER END */
+html:not(.designer) [name*="s_dropdown"] a.styling-font {
+    position: relative !important;
+    z-index: 1 !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    height: 100% !important;
+    padding: 0 !important;
+    top: -1.8rem;
+    cursor: pointer !important;
+}
+html:not(.designer) [name*="s_dropdown"] a.styling-font span,
+html .theme-entry [name*="s_calendar"] .input-control.select-box:not(.hide-buttons) .input-control-m-c input{
+    padding:0;
+    color: var(--black);
+    font-size: 1rem!important;
+    font-family: var(--regularFont)!important;
+}
+html:not(.designer) [name*="s_dropdown"].on-focus a.styling-font,
+html:not(.designer) [name*="s_dropdown"]:has(.readonly) a.styling-font,
+html:not(.designer) [name*="s_dropdown"]:has(.read-only) a.styling-font{
+    top: 0rem;
+}
+html:not(.designer) .on-focus[name*="s_dropdown"] [name*="s_label"],
+html:not(.designer) [name*="s_dropdown"]:has(.readonly) [name*="s_label"],
+html:not(.designer) .form.editingForm [name*="s_dropdown"] [name*="s_label"]{
+        font-size: .85rem!important;
+        color: rgb(0 0 0 / 70%) !important;
+        transform: translateY(-.7rem);
+    }
+html:not(.designer) .on-focus[name*="s_calendar"] [name*="s_label"],
+html:not(.designer) .form.editingForm [name*="s_calendar"] [name*="s_label"]{
+    font-size: .85rem!important;
+        color: rgb(0 0 0 / 70%) !important;
+        transform: translateY(-0.5rem);
+}
+html:not(.designer) .on-focus[name*="s_textbox"] [name*="s_label"],
+html:not(.designer) .on-focus[name*="s_textarea"] [name*="s_label"],
+html:not(.designer) .form.editingForm [name*="s_textarea"] [name*="s_label"],
+html:not(.designer) .form.editingForm [name*="s_textbox"] [name*="s_label"],
+html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_label"],
+html:not(.designer) [name*="s_textarea"]:has(.read-only) [name*="s_label"],
+html:not(.designer) [name*="s_calendar"]:has(.datepicker.read-only) [name*="s_label"]{
+    transform: translateY(-0.6rem);
+    font-size: .85rem!important;
+    color: rgb(0 0 0 / 70%) !important;
+}
+html:not(.designer) [name*="s_calendar"]:has(.datepicker.read-only) [name*="s_label"]{
+     transform: translateY(-1rem);
+     font-size: .85rem!important;
+     color: rgb(0 0 0 / 70%) !important;
+}
+.on-focus[name*="s_dropdown"] a.styling-font,
+html:not(.designer) .form.editingForm [name*="s_dropdown"] a.styling-font{
+    position: absolute !important;
+    z-index: 0 !important;
+    width: calc(100% - 2rem) !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    height: 2rem !important;
+    min-height: 2rem !important;
+    padding: 0 !important;
+    top: -0.5rem;
+}
+.theme-entry .input-control.select-box .input-control-buttons a.date > span span, 
+.theme-entry .input-control.select-box .input-control-buttons a.date:active > span span, 
+.theme-entry .input-control.select-box.active .input-control-buttons a.date > span span, 
+.theme-entry .input-control.select-box.read-only .input-control-buttons a.date:hover > span span, 
+.theme-entry .input-control.select-box.read-only .input-control-buttons a.date:focus > span span, 
+.theme-entry .input-control.select-box.disabled .input-control-buttons a.date:hover > span span, 
+.theme-entry .input-control.select-box.disabled .input-control-buttons a.date:focus > span span{
+    background-image:url("/Runtime/Styles/DAEP/images/svg/date.svg")!important;
+    background-size:1rem;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.theme-entry .input-control.select-box .input-control-buttons a.dropdown > span span, 
+.theme-entry .input-control.select-box .input-control-buttons a.dropdown:active > span span, 
+.theme-entry .input-control.select-box.active .input-control-buttons a.dropdown > span span, 
+.theme-entry .input-control.select-box.active .input-control-buttons a.dropdown:focus > span span, 
+.theme-entry .input-control.select-box.active .input-control-buttons a.dropdown:hover > span span, 
+.theme-entry .input-control.select-box.read-only .input-control-buttons a.dropdown:hover > span span, 
+.theme-entry .input-control.select-box.read-only .input-control-buttons a.dropdown:focus > span span{
+    background-image: url("/Runtime/Styles/DAEP/images/red-chevron.png")!important;
+    background-size:1rem;
+    background-position:center!important;
+}
+.theme-entry .grid .grid-column-headers{
+    border-top-left-radius:1rem;
+    border-top-right-radius:1rem;
+}
+[name*="s_textbox"] input.SourceCode-Forms-Controls-Web-TextBox {
+    position: absolute !important;
+    width: calc(100% - 2rem) !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    padding: 0 !important;
+    top: 0;
+    z-index: 1 !important;
+}
+
+.on-focus[name*="s_textbox"] input.SourceCode-Forms-Controls-Web-TextBox,
+html:not(.designer) .form.editingForm input.SourceCode-Forms-Controls-Web-TextBox{
+    position: absolute !important;
+    width: calc(100% - 2rem) !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    height: 2rem !important;
+    min-height: 2rem !important;
+    padding: 0 !important;
+    top: 1.4rem;
+    z-index: 1 !important;
+    color: var(--black);
+}
+
+.on-focus[name*="s_textbox"] input.SourceCode-Forms-Controls-Web-TextBox,
+html:not(.designer) .form.editingForm input.SourceCode-Forms-Controls-Web-TextBox{
+    position: absolute !important;
+    width: calc(100% - 2rem) !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    height: 2rem !important;
+    min-height: 2rem !important;
+    padding: 0 !important;
+    top: 1.4rem;
+    z-index: 1 !important;
+    font-size: .875vw;
+}
+html:not(.designer) [name*="s_dropdown"] .read-only{
+    pointer-events:none;
+}
+html:not(.designer) [name*="s_dropdown"] .read-only .input-control-buttons{
+    display:none;
+}
+html:not(.designer) body.theme-entry [name*="s_textbox"] input[readonly]{
+    padding-top:1rem!important;
+    font-size:var(--textbox_dropdown_textarea_fontSize)!important;
+    color: black;
+}
+    html:not(.designer) [name*="s_dropdown"] [name*="s_asterik"] {
+        transform: translateY(1.3rem) !important;
+    }
+html:not(.designer) [name*="s_calendar"] [name*="s_asterik"]{
+    transform: translateY(0.7rem)!important;
+}
+html:not(.designer) textarea[readonly] {
+    top: -0.9vw;
+}
+/* TABLE STATUS COLUMN START */
+.grid-content-cell-wrapper[title*="Draft"] > span{
+    background-color:#004D7A1F;
+    border:1px solid #0000001A;
+    border-radius:.5rem;
+    color:#333E48;
+    font-family:var(--boldFont)!important;
+    text-align:center;
+    width:fit-content!important;
+    padding:.4rem 3rem!important;
+}
+.grid-content-cell-wrapper[title*="In Progress"] > span{
+    background-color: #D0FCD8B2;
+    border:1px solid #0000001A;
+    border-radius:.5rem;
+    color:#2A7634;
+    font-family:var(--boldFont)!important;
+    text-align:center;
+    width:fit-content!important;
+    padding:.4rem 3rem!important;
+}
+.grid-content-cell-wrapper[title*="Returned"] > span{
+    background-color: #BA9F6430;
+    border:1px solid #0000001A;
+    border-radius:.5rem;
+    color:#BA9F64;
+    font-family:var(--boldFont)!important;
+    text-align:center;
+    width:fit-content!important;
+    padding:.4rem 3rem!important;
+}
+
+/* TABLE STATUS COLUMN END */
+ .theme-entry.runtime-form .grid .grid-content-cell-wrapper{
+        vertical-align:middle;
+        align-content:center;
+        display: flex;
+        align-items: center;
+    }
+    .theme-entry.runtime-form .grid .center-align .grid-content-cell-wrapper{
+        justify-content:center;
+    }
 @media (min-width: 992px) {
-    html:not(.designer) body {
-        margin-left: 19.5rem;
-        width: calc(100% - 19.5rem);
+    :root {
+        --bodyLeftPadding_sidebarWidth: 19.5rem;
     }
 }
-@media(min-width: 1200px){
-    html:not(.designer) body {
-        margin-left: 18rem;
-        width: calc(100% - 18rem);
+
+@media(min-width: 1200px) {
+    :root {
+        --bodyLeftPadding_sidebarWidth: 18rem;
     }
 }
-@media(min-width: 1600px){
-    html:not(.designer) [name*="s_label"] {
+
+@media(min-width: 1600px) {
+    :root {
+        --bodyLeftPadding_sidebarWidth: 18vw;
+        --bodyPaddingTop_headerHeight: 6vw;
+        --sidebarPadding: 2vw 1.5vw;
+        --textbox_dropdown_textarea_fontSize: 1vw;
+        --textbox_dropdown_textarea_borderRadius: .5vw;
+        --textbox_dropdown_textarea_minHeight: 3vw;
+        --textbox_dropdown_height: 3vw;
+        --tableGap: 1vw;
+        --s_collapse_borderRadius:1.5vw;
+        --borderRadius_05:0.5vw;
+    }
+    .theme-entry .grid table.grid-column-header-table{
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+}
+   
+    html:not(.designer) [name*="s_dropdown"] a.styling-font span,
+html .theme-entry [name*="s_calendar"] .input-control.select-box:not(.hide-buttons) .input-control-m-c input{
+    font-size:0.875vw!important;
+}
+    html:not(.designer) .on-focus[name*="s_calendar"] [name*="s_label"]{
+    transform: translateY(-0.4vw);
+    font-size:.7vw;
+}
+    html:not(.designer) .on-focus[name*="s_textbox"] [name*="s_label"],
+html:not(.designer) .on-focus[name*="s_textarea"] [name*="s_label"],
+html:not(.designer) .form.editingForm [name*="s_textarea"] [name*="s_label"],
+html:not(.designer) .form.editingForm [name*="s_textbox"] [name*="s_label"],
+html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_label"],
+html:not(.designer) [name*="s_textarea"]:has(.read-only) [name*="s_label"],
+html:not(.designer) [name*="s_calendar"]:has(.datepicker.read-only) [name*="s_label"]{
+    transform: translateY(-0.6vw);
+}
+    html:not(.designer) [name*="s_textarea"]:has(.read-only) [name*="s_label"],
+    html:not(.designer) .on-focus[name*="s_textarea"] [name*="s_label"],
+    html:not(.designer) .form.editingForm [name*="s_textarea"] [name*="s_label"]{
+    transform: translateY(-0.2vw);
+}
+    html:not(.designer) .on-focus[name*="s_calendar"] input[type=text].input-control{font-size:.875vw;top: 0.7vw!important;padding:0;}
+     .sidebarHeader{
+    margin-bottom:1vw;
+}
+html:not(.designer) .on-focus [name*="s_asterik"],
+html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_asterik"]{
+    color:var(--red)!important;
+    transform:translateY(-.7vw);
+    height: unset!important;
+    min-height: unset;
+    min-height: unset!important;
+    padding: 0!important;
+}
+
+html:not(.designer) [name*="s_calendar"] [name*="s_asterik"]{
+    transform: translateY(1vw)!important;
+}
+    html:not(.designer) [name*="s_dropdown"] [name*="s_asterik"]{
+    transform: translateY(1.3vw)!important;
+}
+html:not(.designer) [name*="s_dropdown"]:has(.read-only) [name*="s_asterik"],
+html:not(.designer) [name*="s_calendar"]:has(.read-only) [name*="s_asterik"]{
+    color:var(--red)!important;
+    transform:translateY(.7vw);
+}
+    html:not(.designer) [name*="s_textarea"].on-focus [name*="s_asterik"]{
+        transform:translateY(-.3vw);
+    }
+    html:not(.designer) .on-focus[name*="s_dropdown"] [name*="s_asterik"]{
+        transform: translateY(1.4vw);
+    }
+.sidebarHeader button.collapseSidebar {
+
+    height: 2.5vw;
+    width: 2.5vw;
+    border-radius: .5vw;
+}
+
+html:not(.designer) .on-focus[name*="s_textbox"] [name*="s_label"],
+.on-focus[name*="s_textarea"] [name*="s_label"],
+html:not(.designer) .form.editingForm [name*="s_dropdown"] [name*="s_label"],
+html:not(.designer) .form.editingForm [name*="s_textbox"] [name*="s_label"],
+html:not(.designer) .form.editingForm [name*="s_textarea"] [name*="s_label"]{
+        transform:translateY(-.7vw);
+    }
+    html:not(.designer) .on-focus[name*="s_dropdown"] [name*="s_label"]{
+        transform: translateY(0vw);
+    }
+    .theme-entry .input-control.select-box .input-control-buttons a.dropdown > span span, 
+.theme-entry .input-control.select-box .input-control-buttons a.dropdown:active > span span, 
+.theme-entry .input-control.select-box.active .input-control-buttons a.dropdown > span span, 
+.theme-entry .input-control.select-box.active .input-control-buttons a.dropdown:focus > span span, 
+.theme-entry .input-control.select-box.active .input-control-buttons a.dropdown:hover > span span, 
+.theme-entry .input-control.select-box.read-only .input-control-buttons a.dropdown:hover > span span, 
+.theme-entry .input-control.select-box.read-only .input-control-buttons a.dropdown:focus > span span{
+    background-image:url("/Runtime/Styles/DAEP/images/red-chevron.png")!important;
+    background-size: 0.8vw;
+}
+    /* SIDEBAR START */
+    html body ul.links>li {
+        padding: .5vw 1vw;
+        margin-bottom: .5vw;
+        border-radius: .5vw;
+    }
+
+    .sideBarLinksGroup .icon {
+        width: 1.5vw;
+    }
+
+    html body ul.links li .icon {
+        margin-right: 1vw;
+    }
+
+    .sideBarLinksGroup a {
         font-size: 1vw;
     }
-    html:not(.designer) body.theme-entry [name*="s_textbox"]{
-        font-size: 1vw !important;
-        border-radius: .5vw !important;
-        padding: .4vw 1vw !important;
-        min-height: 3.5vw !important;
-        height: 3.5vw !important;
-        padding: 0 1vw !important;
+
+    /* SIDEBAR END */
+    /* HEADER START */
+    header [name*="headerTitle"] {
+        font-size: 1.4vw;
+    }
+
+    header [name*="headerDescription"] {
+        font-size: 1vw;
+    }
+
+    /* HEADER END */
+
+    /* COLLAPSE VIEW START */
+    html:not(.designer) body.theme-entry .view [name*="s_collapse"] .panel-header-wrapper,
+    html:not(.designer) body.theme-entry .view [name*="s_collapse"] .grid-header-wrapper{
+        padding: 2VW 1VW;
+        height: 4VW !important;
+        min-height: 4VW !important;
+    }
+
+    html:not(.designer) body.theme-entry .view [name*="s_collapse"] .panel-header-wrapper .panel-header-text span,
+    html:not(.designer) body.theme-entry .grid-header-wrapper .grid-header-text > span{
+        font-size: 1.4VW;
+    }
+    html:not(.designer) body.theme-entry [name*="s_collapse"] .panel-body{
+        padding:1vw 1.3vw;
+    }
+     html:not(.designer) body.theme-entry [name*="s_collapse"] .grid-body,
+    html:not(.designer) body.theme-entry [name*="s_collapse"]  .grid-toolbars{
+        padding:0vw 1.3vw;
+    }
+
+    /* COLLAPSE VIEW END */
+    html:not(.designer) [name*="s_label"],
+    html:not(.designer) body.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label{
+        font-size: 1vw;
     }
     html:not(.designer) [name*="s_button"],
     html:not(.designer) .theme-entry .dialog .popup-footer .SourceCode-Forms-Controls-Web-Button {
@@ -224,13 +1001,13 @@ html:not(.designer) body.theme-entry .view [name*="s_collapse"] .panel-header{
         font-size: 1vw;
         margin: .3vw 0;
     }
-        html:not(.designer) [name*="s_textbox"], 
-        html:not(.designer) [name*="s_dropdown"] {
-        font-size: 1vw !important;
-        border-radius: 0.5vw !important;
-        padding: 0.4vw 1vw !important;
-        min-height: 3vw !important;
-        height: 3vw !important;
+
+    html:not(.designer) [name*="s_textbox"],
+    html:not(.designer) [name*="s_dropdown"],
+    html:not(.designer) [name*="s_calendar"]{
         padding: 0 1vw !important;
     }
+html:not(.designer) textarea[readonly] {
+    top: -0.9vw;
+}
 }
