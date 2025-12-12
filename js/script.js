@@ -27,13 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
             {
               icon: "/Runtime/Styles/DAEP/images/sidebar/dashboard.png",
               name: "Dashboard",
-              url: "/Runtime/Runtime/Form/NR__MarketingRequest__Form/"
+              url: "/Runtime/Runtime/Form/Dashboard1/"
             },
-            // {
-            //   icon: "/Runtime/Styles/Style%20profile/images/net/Dashboard.svg",
-            //   name: "My Recent Submission",
-            //   url: "/Runtime/Runtime/Form/MainDashboard"
-            // },
           ]
         },
         {
