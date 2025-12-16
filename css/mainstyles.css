@@ -16,6 +16,7 @@
     --s_collapse_border:1px solid rgb(0 0 0 / 10%);
     --s_collapse_borderRadius:1.5rem;
     --borderRadius_05:0.5rem;
+    --field_label_top: -.6rem;
     --fs-h1: clamp(1.9rem, 1.6vw + 0.9rem, 2.3rem);
     --fs-h2: clamp(1.65rem, 1.3vw + 0.85rem, 2rem);
     --fs-h3: clamp(1.4rem, 1.1vw + 0.75rem, 1.7rem);
@@ -27,6 +28,121 @@
     --fs-button: clamp(0.85rem, 0.35vw + 0.85rem, 0.95rem);
     --fs-caption: clamp(0.85rem, 0.3vw + 0.8rem, 0.9rem);
 }
+/* popup */
+.theme-entry .base2.base1.modalizer{
+z-index:3!important;
+}
+.theme-entry .dialog.error-message:not(.runtime-message) .popup-body, 
+.theme-entry .dialog.warning-message:not(.runtime-message) .popup-body, 
+.theme-entry .dialog.info-message:not(.runtime-message) .popup-body, 
+.theme-entry .dialog.confirmation-message:not(.runtime-message) .popup-body{
+    top:0!important;
+}
+html:not(.designer) .theme-entry .stack-container .stack div.multi-select-box-list-item label.input-control .input-control-text{
+    max-width:unset!important;
+    min-height:2rem;
+    font-size:var(--fs-body)!important;
+    font-family:var(--regularFont)!important;
+    color:black;
+}
+.popup.dialog{
+    z-index:99!important;
+}
+.popup.dialog .popup-header{
+    margin:0!Important;
+}
+.popup-header-text{
+    font-size:var(--fs-h5)!important;
+    font-family:var(--boldFont)!important;
+}
+/**/
+html:not(.designer) [name*="s_label"],
+html:not(.designer) body.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label{
+    font-size: var(--fs-body);
+    color: var(--black);
+    font-family: var(--regularFont);
+    transition: all .3s ease-in-out;
+    height: unset !important;
+    min-height: unset !important;
+    line-height: unset !important;
+    text-wrap: auto;
+}
+
+
+html:not(.designer) body.theme-entry [name*="s_textbox"] [name*="s_label"]{
+    position: relative;
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    color: var(--black)!important;
+    font-size: var(
+    --fs-body)!important;
+    padding: 0!Important; position: relative;
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    color: var(--black)!important;
+    font-size: var(
+    --fs-body)!important;
+    padding: 0!Important;
+}
+html:not(.designer) body.theme-entry [name*="s_dropdown"] [name*="s_label"],
+html:not(.designer) body.theme-entry [name*="s_picker"] [name*="s_label"],
+html:not(.designer) body.theme-entry [name*="s_calendar"] [name*="s_label"]{
+     position: relative;
+    top: 50%;
+    transform: translateY(-20%);
+    color: var(--black)!important;
+    font-size: var(
+    --fs-body)!important;
+    padding: 0!Important;
+}
+html:not(.designer).dark body.theme-entry [name*="s_dropdown"] [name*="s_label"], 
+html:not(.designer).dark body.theme-entry [name*="s_picker"] [name*="s_label"], 
+html:not(.designer).dark body.theme-entry [name*="s_calendar"] [name*="s_label"], 
+html:not(.designer).dark body.theme-entry [name*="s_textbox"] [name*="s_label"], 
+html:not(.designer).dark body.theme-entry [name*="s_textarea"] [name*="s_label"]
+html:not(.designer).dark body.theme-entry [name*="s_textarea"] [name*="s_label"],
+html:not(.designer).dark body.theme-entry [name*="s_dropdown"] [name*="s_label"], 
+html:not(.designer).dark body.theme-entry [name*="s_picker"] [name*="s_label"], 
+html:not(.designer).dark body.theme-entry [name*="s_calendar"] [name*="s_label"], 
+html:not(.designer).dark body.theme-entry [name*="s_textbox"] [name*="s_label"], 
+html:not(.designer).dark body.theme-entry [name*="s_textarea"] [name*="s_label"]{
+    color:var(--Navy-blue-low-opacity)!important;
+}
+html:not(.designer) body.theme-entry .on-focus [name*="s_label"],
+html:not(.designer) body.theme-entry [name*="s_dropdown"]:has(span.styling-font:not(:empty)) [name*="s_label"],
+html:not(.designer) body.theme-entry .editingForm [name*="s_label"]{
+    top: var(--field_label_top)!important;
+    transform: none;
+    font-size: var(--fs-caption)!important;
+}
+
+html:not(.designer) body.theme-entry [name*="s_dropdown"]:has(span.styling-font:not(:empty)) [name*="s_label"]{
+    top: 1rem!important;
+    transform: none;
+    font-size: var(--fs-caption)!important;
+}
+html:not(.designer) .theme-entry [name*="s_dropdown"]:has([name*="s_label"].hidden),
+html:not(.designer) .theme-entry [name*="s_picker"]:has([name*="s_label"].hidden),
+html:not(.designer) .theme-entry [name*="s_textbox"]:has([name*="s_label"].hidden),
+html:not(.designer) .theme-entry [name*="s_textarea"]:has([name*="s_label"].hidden){
+    display:none!important;
+}
+html:not(.designer) .theme-entry [name*="s_dropdown"] .select-box .input-control a.input-control span, 
+html:not(.designer) .theme-entry [name*="s_dropdown"] .select-box .input-control.watermark a.input-control span, 
+html:not(.designer) [name*="s_dropdown"] a.styling-font, 
+html:not(.designer) [name*="s_picker"] a.styling-font {
+    padding: 0 !important;
+    line-height: normal !important;
+    min-height: unset !important;
+    height: unset !important;
+    font-size: var(--fs-body);
+    margin-top: 1rem;
+}
+/**/
+html:not(.designer) .theme-entry .input-control.text-input.readonly .input-control-m-c, 
+html:not(.designer) .theme-entry .input-control.text-input.read-only .input-control-m-c{
+	background-color:transparent!important;
+}
 .runtime-view .sidebar{
     display:none!important;
 }
@@ -35,6 +151,7 @@ html:not(.designer) [name*="s_asterik"]{
     height: unset!important;
     min-height: unset!important;
     padding: 0!Important;
+    position: relative;
 }
 html:not(.designer) body.theme-entry .grid-column-headers{
     background:linear-gradient(to bottom, #ffffff, #f7f7f7)!important;
@@ -114,8 +231,6 @@ html:not(.designer) .popup-body{
 }
 .popup-header-button-bar-wrapper a{
     margin:0!important;
-    /* height: 2rem!important; */
-    /* width: 2rem!important; */
     min-width:fit-content;
 }
 @font-face {
@@ -191,6 +306,9 @@ html:not(.designer) .filterContainer {
     justify-content: space-between;
     padding: 1rem 0;
 }
+html:not(.designer) .theme-entry .filterContainer .input-control.select-box .input-control-body{
+    width: 88%!important;
+}
 html:not(.designer) .filterChosen.filter {
     display: none !important;
 }
@@ -247,11 +365,6 @@ html:not(.designer) .input-control.text-input .input-control-m-c {
 .theme-entry .SourceCode-Forms-Controls-Web-ControlPack-ListBox .stylewrapper{
     border:1px solid rgb(0 0 0 / 15%)!important;
      border-radius:1rem;
-}
-html:not(.designer) [name*="s_text"] [name*="s_label"],
-html:not(.designer) [name*="s_textarea"] [name*="s_label"] {
-    position: relative;
-    z-index: 0 !important;
 }
 html:not(.designer) body.theme-entry [name*="s_checkboxContainer"]{
     display:flex!important;
@@ -488,26 +601,12 @@ html:not(.designer) [name*="s_textarea"] {
     top: -2.3rem;
     font-family: var(--regularFont) !important;
 }
-html:not(.designer) [name*="s_label"],
-html:not(.designer) body.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label{
-    font-size: 1rem;
-    color: var(--black);
-    font-family: var(--regularFont);
-    transition: all .3s ease-in-out;
-    height: unset !important;
-    min-height: unset !important;
-    line-height: unset !important;
-    text-wrap: auto;
-}
+
 [name*="s_dropdown"] [name*="s_label"]{
     z-index:0;
 }
 [name*="s_dropdown"] .select-box{
     z-index:3;
-}
-html:not(.designer) [name*="s_calendar"]:not(.on-focus) .input-control-buttons,
-html:not(.designer) [name*="s_dropdown"]:not(.on-focus) .input-control-buttons{
-    transform:translateY(-25%);
 }
 html:not(.designer) [name*="s_calendar"] .input-control-buttons.styling-right.styling-inner-wrapper{
     display:block!important;
@@ -518,16 +617,6 @@ html:not(.designer) [name*="s_calendar"] .input-control-buttons.styling-right.st
 }
 .theme-entry .input-control.select-box .input-control-buttons a:hover{
     background-color:transparent!important;
-}
-html:not(.designer) [name*="s_dropdown"] [name*="s_label"]{
-    position: relative;
-    top: 50%;
-    /* transform: translateY(-50%); */
-    padding: 0 !important;
-}
-html .theme-entry [name*="s_calendar"] .input-control.select-box:not(.hide-buttons) .input-control-m-c{
-    height:unset!important;
-    min-height:unset!important;
 }
 html:not(.designer) [name*="s_calendar"] [name*="s_label"]{
     position: relative;
@@ -665,21 +754,14 @@ html:not(.designer) body.theme-entry .view [name*="s_collapse"] .panel-header .p
 }
 
 /* VIEW HEADER END */
-html:not(.designer) [name*="s_dropdown"] a.styling-font {
-    position: relative !important;
-    z-index: 1 !important;
-    border: 0 !important;
-    background-color: transparent !important;
-    height: 100% !important;
+html:not(.designer) [name*="s_dropdown"] a.styling-font .styling-font, html:not(.designer) [name*="s_picker"] a.styling-font .styling-font {
     padding: 0 !important;
-    top: -1.8rem;
-    cursor: pointer !important;
 }
 html:not(.designer) [name*="s_dropdown"] a.styling-font span,
 html .theme-entry [name*="s_calendar"] .input-control.select-box:not(.hide-buttons) .input-control-m-c input{
     padding:0;
     color: var(--black);
-    font-size: 1rem!important;
+    font-size: var(--fs-body)!important;
     font-family: var(--regularFont)!important;
 }
 html:not(.designer) [name*="s_dropdown"].on-focus a.styling-font,
@@ -687,30 +769,7 @@ html:not(.designer) [name*="s_dropdown"]:has(.readonly) a.styling-font,
 html:not(.designer) [name*="s_dropdown"]:has(.read-only) a.styling-font{
     top: 0rem;
 }
-html:not(.designer) .on-focus[name*="s_dropdown"] [name*="s_label"],
-html:not(.designer) [name*="s_dropdown"]:has(.readonly) [name*="s_label"],
-html:not(.designer) .form.editingForm [name*="s_dropdown"] [name*="s_label"]{
-        font-size: .85rem!important;
-        color: rgb(0 0 0 / 70%) !important;
-        transform: translateY(-.7rem);
-    }
-html:not(.designer) .on-focus[name*="s_calendar"] [name*="s_label"],
-html:not(.designer) .form.editingForm [name*="s_calendar"] [name*="s_label"]{
-    font-size: .85rem!important;
-        color: rgb(0 0 0 / 70%) !important;
-        transform: translateY(-0.5rem);
-}
-html:not(.designer) .on-focus[name*="s_textbox"] [name*="s_label"],
-html:not(.designer) .on-focus[name*="s_textarea"] [name*="s_label"],
-html:not(.designer) .form.editingForm [name*="s_textarea"] [name*="s_label"],
-html:not(.designer) .form.editingForm [name*="s_textbox"] [name*="s_label"],
-html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_label"],
-html:not(.designer) [name*="s_textarea"]:has(.read-only) [name*="s_label"],
-html:not(.designer) [name*="s_calendar"]:has(.datepicker.read-only) [name*="s_label"]{
-    transform: translateY(-0.6rem);
-    font-size: .85rem!important;
-    color: rgb(0 0 0 / 70%) !important;
-}
+
 html:not(.designer) [name*="s_calendar"]:has(.datepicker.read-only) [name*="s_label"]{
      transform: translateY(-1rem);
      font-size: .85rem!important;
@@ -718,15 +777,15 @@ html:not(.designer) [name*="s_calendar"]:has(.datepicker.read-only) [name*="s_la
 }
 .on-focus[name*="s_dropdown"] a.styling-font,
 html:not(.designer) .form.editingForm [name*="s_dropdown"] a.styling-font{
-    position: absolute !important;
-    z-index: 0 !important;
-    width: calc(100% - 2rem) !important;
+    position: relative !important;
+    z-index: 1 !important;
     border: 0 !important;
     background-color: transparent !important;
-    height: 2rem !important;
-    min-height: 2rem !important;
+    height: 100% !important;
+    min-height: 3.3rem !important;
     padding: 0 !important;
-    top: -0.5rem;
+    top: 0;
+    cursor: pointer !important;
 }
 .theme-entry .input-control.select-box .input-control-buttons a.date > span span, 
 .theme-entry .input-control.select-box .input-control-buttons a.date:active > span span, 
@@ -792,7 +851,7 @@ html:not(.designer) .form.editingForm input.SourceCode-Forms-Controls-Web-TextBo
     padding: 0 !important;
     top: 1.4rem;
     z-index: 1 !important;
-    font-size: .875vw;
+    font-size: var(--fs-body)!important;
 }
 html:not(.designer) [name*="s_dropdown"] .read-only{
     pointer-events:none;
@@ -801,15 +860,8 @@ html:not(.designer) [name*="s_dropdown"] .read-only .input-control-buttons{
     display:none;
 }
 html:not(.designer) body.theme-entry [name*="s_textbox"] input[readonly]{
-    padding-top:1rem!important;
     font-size:var(--textbox_dropdown_textarea_fontSize)!important;
     color: black;
-}
-    html:not(.designer) [name*="s_dropdown"] [name*="s_asterik"] {
-        transform: translateY(1.3rem) !important;
-    }
-html:not(.designer) [name*="s_calendar"] [name*="s_asterik"]{
-    transform: translateY(0.7rem)!important;
 }
 html:not(.designer) textarea[readonly] {
     top: -0.9vw;
@@ -826,6 +878,16 @@ html:not(.designer) body.theme-entry .grid-content-cell-wrapper[title*="Draft"] 
     padding:.4rem 3rem!important;
 }
 html:not(.designer) body.theme-entry  .grid-content-cell-wrapper[title*="In Progress"] > span{
+    background-color: rgba(186 159 100 / .2);
+    border:1px solid #0000001A;
+    border-radius:.5rem;
+    color: rgb(186 159 100)!important;
+    font-family:var(--boldFont)!important;
+    text-align:center;
+    width:fit-content!important;
+    padding:.4rem 2rem!important;
+}
+html:not(.designer) body.theme-entry  .grid-content-cell-wrapper[title*="Approved"] > span{
     background-color: #D0FCD8B2;
     border:1px solid #0000001A;
     border-radius:.5rem;
@@ -833,7 +895,27 @@ html:not(.designer) body.theme-entry  .grid-content-cell-wrapper[title*="In Prog
     font-family:var(--boldFont)!important;
     text-align:center;
     width:fit-content!important;
-    padding:.4rem 2rem!important;
+    padding:.4rem 3rem!important;
+}
+html:not(.designer) body.theme-entry  .grid-content-cell-wrapper[title*="Rejected"] > span{
+    background-color: rgba(226 39 38 / .15);
+    border:1px solid #0000001A;
+    border-radius:.5rem;
+    color: var(--red)!important;
+    font-family:var(--boldFont)!important;
+    text-align:center;
+    width:fit-content!important;
+    padding:.4rem 3rem!important;
+}
+html:not(.designer) body.theme-entry  .grid-content-cell-wrapper[title*="Withdrawn"] > span{
+    background-color: rgba(255 139 89 / .15);
+    border:1px solid #0000001A;
+    border-radius:.5rem;
+    color: rgb(255 139 89)!important;
+    font-family:var(--boldFont)!important;
+    text-align:center;
+    width:fit-content!important;
+    padding:.4rem 3rem!important;
 }
 /* TABLE SORT ICON */
 .theme-entry .grid .grid-column-header-cell.asc .grid-column-header-cell-wrapper:before{
@@ -940,6 +1022,7 @@ html:not(.designer) body.theme-entry [name*="kpisTable"]{
         --bodyLeftPadding_sidebarWidth: 18vw;
         --bodyPaddingTop_headerHeight: 6vw;
         --sidebarPadding: 2vw 1.5vw;
+        --field_label_top: -0.6vw;
         --textbox_dropdown_textarea_fontSize: 1vw;
         --textbox_dropdown_textarea_borderRadius: .5vw;
         --textbox_dropdown_textarea_minHeight: 3vw;
@@ -948,8 +1031,17 @@ html:not(.designer) body.theme-entry [name*="kpisTable"]{
         --s_collapse_borderRadius:1.5vw;
         --borderRadius_05:0.5vw;
     }
+    html:not(.designer) .theme-entry [name*="s_dropdown"] .select-box .input-control a.input-control span, 
+    html:not(.designer) .theme-entry [name*="s_dropdown"] .select-box .input-control.watermark a.input-control span, 
+    html:not(.designer) [name*="s_dropdown"] a.styling-font, 
+    html:not(.designer) [name*="s_picker"] a.styling-font{
+    margin-top:1vw;
+    }
     .SourceCodeFormsControlsWorklist{
     border-radius:1vw!important;
+}
+    html:not(.designer) body.theme-entry [name*="s_dropdown"]:has(span.styling-font:not(:empty)) [name*="s_label"]{
+    top: 1vw!important;
 }
     .theme-entry .grid table.grid-column-header-table{
     border-top-left-radius: 1vw;
@@ -987,29 +1079,14 @@ html:not(.designer) body.theme-entry [name*="kpiIcon"]{
     padding: .6vw;
 }
 
-html:not(.designer) body.theme-entry [name*="kpiText"]{
-    
-}
 html:not(.designer) body.theme-entry [name*="kpiItem"]::before{
     height: 2vw;
-}
-    html:not(.designer) [name*="s_dropdown"] a.styling-font span,
-html .theme-entry [name*="s_calendar"] .input-control.select-box:not(.hide-buttons) .input-control-m-c input{
-    font-size:0.875vw!important;
 }
     html:not(.designer) .on-focus[name*="s_calendar"] [name*="s_label"]{
     transform: translateY(-0.4vw);
     font-size:.7vw;
 }
-    html:not(.designer) .on-focus[name*="s_textbox"] [name*="s_label"],
-html:not(.designer) .on-focus[name*="s_textarea"] [name*="s_label"],
-html:not(.designer) .form.editingForm [name*="s_textarea"] [name*="s_label"],
-html:not(.designer) .form.editingForm [name*="s_textbox"] [name*="s_label"],
-html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_label"],
-html:not(.designer) [name*="s_textarea"]:has(.read-only) [name*="s_label"],
-html:not(.designer) [name*="s_calendar"]:has(.datepicker.read-only) [name*="s_label"]{
-    transform: translateY(-0.6vw);
-}
+
     html:not(.designer) [name*="s_textarea"]:has(.read-only) [name*="s_label"],
     html:not(.designer) .on-focus[name*="s_textarea"] [name*="s_label"],
     html:not(.designer) .form.editingForm [name*="s_textarea"] [name*="s_label"]{
@@ -1028,24 +1105,6 @@ html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_asterik"]
     min-height: unset!important;
     padding: 0!important;
 }
-
-html:not(.designer) [name*="s_calendar"] [name*="s_asterik"]{
-    transform: translateY(1vw)!important;
-}
-    html:not(.designer) [name*="s_dropdown"] [name*="s_asterik"]{
-    transform: translateY(1.3vw)!important;
-}
-html:not(.designer) [name*="s_dropdown"]:has(.read-only) [name*="s_asterik"],
-html:not(.designer) [name*="s_calendar"]:has(.read-only) [name*="s_asterik"]{
-    color:var(--red)!important;
-    transform:translateY(.7vw);
-}
-    html:not(.designer) [name*="s_textarea"].on-focus [name*="s_asterik"]{
-        transform:translateY(-.3vw);
-    }
-    html:not(.designer) .on-focus[name*="s_dropdown"] [name*="s_asterik"]{
-        transform: translateY(1.4vw);
-    }
 .sidebarHeader button.collapseSidebar {
 
     height: 2.5vw;
@@ -1053,13 +1112,7 @@ html:not(.designer) [name*="s_calendar"]:has(.read-only) [name*="s_asterik"]{
     border-radius: .5vw;
 }
 
-html:not(.designer) .on-focus[name*="s_textbox"] [name*="s_label"],
-.on-focus[name*="s_textarea"] [name*="s_label"],
-html:not(.designer) .form.editingForm [name*="s_dropdown"] [name*="s_label"],
-html:not(.designer) .form.editingForm [name*="s_textbox"] [name*="s_label"],
-html:not(.designer) .form.editingForm [name*="s_textarea"] [name*="s_label"]{
-        transform:translateY(-.7vw);
-    }
+
     html:not(.designer) .on-focus[name*="s_dropdown"] [name*="s_label"]{
         transform: translateY(0vw);
     }
@@ -1115,10 +1168,6 @@ html:not(.designer) .form.editingForm [name*="s_textarea"] [name*="s_label"]{
     }
 
     /* COLLAPSE VIEW END */
-    html:not(.designer) [name*="s_label"],
-    html:not(.designer) body.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label{
-        font-size: 1vw;
-    }
     html:not(.designer) [name*="s_button"],
     html:not(.designer) .theme-entry .dialog .popup-footer .SourceCode-Forms-Controls-Web-Button {
         border-radius: .5vw !important;
