@@ -5,9 +5,9 @@
     --red:#E22726;
     --regularFont: "Lato Regular";
     --boldFont: "Lato Bold";
-    --sidebarPadding: 2rem 1.5rem;
+    --sidebarPadding: 1.9rem 1.5rem;
     --bodyLeftPadding_sidebarWidth: 19.5rem;
-    --bodyPaddingTop_headerHeight: 6rem;
+    --bodyPaddingTop_headerHeight: 7rem;
     --textbox_dropdown_textarea_fontSize: 1rem;
     --textbox_dropdown_textarea_borderRadius: .5rem;
     --textbox_dropdown_textarea_minHeight: 3.5rem;
@@ -28,14 +28,36 @@
     --fs-button: clamp(0.85rem, 0.35vw + 0.85rem, 0.95rem);
     --fs-caption: clamp(0.85rem, 0.3vw + 0.8rem, 0.9rem);
 }
-/* popup */
-.theme-entry .base2.base1.modalizer{
-z-index:3!important;
+/**/
+html:not(.designer) body.theme-entry [name*="add_new_item"]{
+    display:flex!important;
+    align-items:center;
+    border: 1.9px solid #D8D8D8!important;
+    padding: 0.6rem 1rem;
+    width:fit-content;
+    border-radius:.5rem;
+    margin-left: 1rem;
 }
-.theme-entry .dialog.error-message:not(.runtime-message) .popup-body, 
-.theme-entry .dialog.warning-message:not(.runtime-message) .popup-body, 
-.theme-entry .dialog.info-message:not(.runtime-message) .popup-body, 
-.theme-entry .dialog.confirmation-message:not(.runtime-message) .popup-body{
+html:not(.designer) body.theme-entry [name*="buttonsGap"],
+html:not(.designer) body.theme-entry [name*="buttonsGap"] [layouttype="cell"]{
+ gap:1rem!important;
+}
+html:not(.designer) body.theme-entry [name*="add_new_item"] [name*="s_link"]{
+    color:#333E48;
+    font-family: var(--boldFont)!important;
+    font-size: var(--fs-body)!important;
+    text-decoration: none;
+    margin-left: .5rem;
+}
+html:not(.designer) body.theme-entry .toolbars.single .toolbar .toolbar-wrapper:has(.filterContainer){
+margin-bottom:1rem;
+}
+/* popup */
+html:not(.designer) body.theme-entry .base2.base1.modalizer{z-index:3!important;}
+html:not(.designer) body.theme-entry .dialog.error-message:not(.runtime-message) .popup-body, 
+html:not(.designer) body.theme-entry .dialog.warning-message:not(.runtime-message) .popup-body, 
+html:not(.designer) body.theme-entry .dialog.info-message:not(.runtime-message) .popup-body, 
+html:not(.designer) body.theme-entry .dialog.confirmation-message:not(.runtime-message) .popup-body{
     top:0!important;
 }
 html:not(.designer) .theme-entry .stack-container .stack div.multi-select-box-list-item label.input-control .input-control-text{
@@ -45,13 +67,13 @@ html:not(.designer) .theme-entry .stack-container .stack div.multi-select-box-li
     font-family:var(--regularFont)!important;
     color:black;
 }
-.popup.dialog{
+html:not(.designer) body.theme-entry .popup.dialog{
     z-index:99!important;
 }
-.popup.dialog .popup-header{
+html:not(.designer) body.theme-entry .popup.dialog .popup-header{
     margin:0!Important;
 }
-.popup-header-text{
+html:not(.designer) body.theme-entry .popup-header-text{
     font-size:var(--fs-h5)!important;
     font-family:var(--boldFont)!important;
 }
@@ -66,34 +88,32 @@ html:not(.designer) body.theme-entry .SFC.SourceCode-Forms-Controls-Web-Label{
     min-height: unset !important;
     line-height: unset !important;
     text-wrap: auto;
+    padding: 0;
 }
 
 
-html:not(.designer) body.theme-entry [name*="s_textbox"] [name*="s_label"]{
+html:not(.designer) body.theme-entry [name*="s_textbox"] [name*="s_label"],
+html:not(.designer) body.theme-entry [name*="s_textarea"] [name*="s_label"]{
     position: relative;
-    /* top: 50%; */
-    /* transform: translateY(-50%); */
     color: var(--black)!important;
     font-size: var(
     --fs-body)!important;
     padding: 0!Important; position: relative;
-    /* top: 50%; */
-    /* transform: translateY(-50%); */
     color: var(--black)!important;
-    font-size: var(
-    --fs-body)!important;
+    font-size: var(--fs-body)!important;
     padding: 0!Important;
 }
+
 html:not(.designer) body.theme-entry [name*="s_dropdown"] [name*="s_label"],
 html:not(.designer) body.theme-entry [name*="s_picker"] [name*="s_label"],
 html:not(.designer) body.theme-entry [name*="s_calendar"] [name*="s_label"]{
-     position: relative;
-    top: 50%;
-    transform: translateY(-20%);
-    color: var(--black)!important;
-    font-size: var(
-    --fs-body)!important;
-    padding: 0!Important;
+     /* position: relative; */
+     /* top: 50%; */
+     transform: translateY(-20%);
+     color: var(--black)!important;
+     /* font-size: var(
+    --fs-body)!important; */
+     /* padding: 0!Important; */
 }
 html:not(.designer).dark body.theme-entry [name*="s_dropdown"] [name*="s_label"], 
 html:not(.designer).dark body.theme-entry [name*="s_picker"] [name*="s_label"], 
@@ -116,8 +136,15 @@ html:not(.designer) body.theme-entry .editingForm [name*="s_label"]{
     font-size: var(--fs-caption)!important;
 }
 
-html:not(.designer) body.theme-entry [name*="s_dropdown"]:has(span.styling-font:not(:empty)) [name*="s_label"]{
+html:not(.designer) body.theme-entry [name*="s_dropdown"]:has(span.styling-font:not(:empty)) [name*="s_label"],
+html:not(.designer) body.theme-entry [name*="s_calendar"] [name*="s_label"]{
     top: 1rem!important;
+    transform: none;
+    font-size: var(--fs-caption)!important;
+}
+html:not(.designer) body.theme-entry .on-focus[name*="s_textarea"] [name*="s_label"],
+html:not(.designer) body.theme-entry .editingForm [name*="s_textarea"] [name*="s_label"]{
+    top: -0.1rem!important;
     transform: none;
     font-size: var(--fs-caption)!important;
 }
@@ -136,7 +163,7 @@ html:not(.designer) [name*="s_picker"] a.styling-font {
     min-height: unset !important;
     height: unset !important;
     font-size: var(--fs-body);
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 /**/
 html:not(.designer) .theme-entry .input-control.text-input.readonly .input-control-m-c, 
@@ -146,12 +173,15 @@ html:not(.designer) .theme-entry .input-control.text-input.read-only .input-cont
 .runtime-view .sidebar{
     display:none!important;
 }
-html:not(.designer) [name*="s_asterik"]{
+html:not(.designer) [name*="s_asterik"],
+html:not(.designer) .on-focus [name*="s_asterik"], 
+html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_asterik"]{
     color:var(--red)!important;
     height: unset!important;
     min-height: unset!important;
     padding: 0!Important;
     position: relative;
+    padding: 0;
 }
 html:not(.designer) body.theme-entry .grid-column-headers{
     background:linear-gradient(to bottom, #ffffff, #f7f7f7)!important;
@@ -182,17 +212,6 @@ html:not(.designer) body.theme-entry .grid-content-cell-wrapper a{
     color:var(--red)!important;
     font-family:var(--boldFont)!important;
 }
-html:not(.designer) .on-focus [name*="s_asterik"],
-html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_asterik"],
-html:not(.designer) [name*="s_textarea"]:has([readonly]) [name*="s_asterik"]{
-    color:var(--red)!important;
-    transform:translateY(-.7rem);
-}
-html:not(.designer) [name*="s_dropdown"]:has(.read-only) [name*="s_asterik"],
-html:not(.designer) [name*="s_calendar"]:has(.read-only) [name*="s_asterik"]{
-    color:var(--red)!important;
-    transform:translateY(.7vw);
-}
 body.theme-entry.runtime-view{
     padding-left: 0!important;
     padding-top: 0!important;
@@ -200,10 +219,10 @@ body.theme-entry.runtime-view{
 .sub-view{
 z-index:5!important;
 }
-.theme-entry .file-wrapper .file-watermark{
+html:not(.designer) body.theme-entry .file-wrapper .file-watermark{
  color:var(--black)!important;
  opacity: .5!important;
- display: block!important;
+ display: block;
  font-size: 1rem;
 }
 .theme-entry .popup-header-buttons a.close,
@@ -270,7 +289,7 @@ html:not(.designer) .popup-body{
 .sub-view .sidebar{
     display:none!important;
 }
- .theme-entry .drop-menu{
+html:not(.designer) body.theme-entry .theme-entry .drop-menu{
 z-index:999!important;
 }
 /* ATTACHMENTS START */
@@ -299,6 +318,7 @@ td.file-info-cell.file-ellipsis .file-info.file-ellipsis {
     white-space: nowrap;
     font-family: var(--boldFont);
     font-size: 1rem !important;
+    color: black!important;
 }
 /* ATTACHMENTS END */
 html:not(.designer) .filterContainer {
@@ -361,6 +381,7 @@ html:not(.designer) .filterChosen.filter {
 }
 html:not(.designer) .input-control.text-input .input-control-m-c {
     border: none !important;
+    background-color: transparent;
 }
 .theme-entry .SourceCode-Forms-Controls-Web-ControlPack-ListBox .stylewrapper{
     border:1px solid rgb(0 0 0 / 15%)!important;
@@ -401,13 +422,16 @@ header {
     background-color: rgb(255 255 255 / 80%);
     z-index: 1;
     height: var(--bodyPaddingTop_headerHeight);
-    padding: 1rem 2rem;
     border-bottom: 1px solid rgb(0 0 0 / 10%);
     backdrop-filter: blur(5px);
     opacity: 0;
     transform: translateY(-100%);
     animation: 1s fadeDown forwards;
 }
+header [name*="s_header"]{
+     padding: 1rem 2rem;
+}
+
 header [name*="headerLeftSection"]{
     display:flex;
     flex-direction:column;
@@ -463,7 +487,31 @@ header [name*="languageButton"]{
     min-height:3rem!important;
     min-width: fit-content!important;
 }
-
+header [name="Table3"]{
+    width: 38%!important;
+}
+[name*="userProfile"]{
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center;
+    gap: 1rem;
+}
+html:not(.designer) body.theme-entry .Grid-Layout>.editor-cell[name*="userDropdown"]{
+    display: flex!important;
+    align-items: center!important;
+    flex-direction: row!important;
+    border:1px solid rgb(0 0 0 / 20%)!important;
+    border-radius:2rem;
+    width:fit-content!important;
+    padding:.4rem 1rem;
+}
+html:not(.designer) body.theme-entry .Grid-Layout>.editor-cell[name*="userDropdown"] .select-box{
+ width: calc(100% - 2rem)!Important;
+}
+html:not(.designer) body.theme-entry .Grid-Layout>.editor-cell[name*="userDropdown"] img{
+    height:2rem;
+    width:2rem;
+}
 /* HEADER END */
 /* SIDEBAR START */
 .sidebarHeader{
@@ -471,8 +519,12 @@ header [name*="languageButton"]{
     align-items:center;
     justify-content:space-between;
     margin-bottom:1rem;
+    padding: var(--sidebarPadding);
+    border-bottom: 1px solid rgb(255 255 255 / 20%);
 }
-
+.sideBarLinksGroup {
+    padding: var(--sidebarPadding);
+}
 .sidebarHeader button.collapseSidebar {
     background-color: rgb(0 0 0 / 10%);
     border: none;
@@ -486,7 +538,6 @@ html body aside.sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    padding: var(--sidebarPadding);
     border-right: 1.5px solid rgb(0 33 52 / 10%);
     z-index: 2;
     background-image: url("/Runtime/Styles/DAEP/images/sidebarPattern.png");
@@ -601,13 +652,6 @@ html:not(.designer) [name*="s_textarea"] {
     top: -2.3rem;
     font-family: var(--regularFont) !important;
 }
-
-[name*="s_dropdown"] [name*="s_label"]{
-    z-index:0;
-}
-[name*="s_dropdown"] .select-box{
-    z-index:3;
-}
 html:not(.designer) [name*="s_calendar"] .input-control-buttons.styling-right.styling-inner-wrapper{
     display:block!important;
     position: relative!important;
@@ -626,7 +670,7 @@ html:not(.designer) [name*="s_calendar"] [name*="s_label"]{
 html:not(.designer) .input-control.select-box {
     height: 100%;
     min-height: 2rem !important;
-    width: calc(100% - 1.5rem) !important;
+    width: 100%!important;
 }
 
 html:not(.designer) .input-control.select-box.dropdown-box .input-control-m-c,
@@ -638,6 +682,7 @@ html:not(.designer) [name*="s_calendar"]  .input-control-m-c{
     min-height: 2rem !important;
     display: flex;
     align-items: center;
+    width: calc(100% - 2rem);
 }
 
 [name*="s_textbox"] input.SourceCode-Forms-Controls-Web-TextBox {
@@ -667,11 +712,13 @@ html:not(.designer) [name*="s_calendar"]  .input-control-m-c{
     font-family: var(--regularFont) !important;
     color: var(--black) !important;
 }
+ html:not(.designer) body.theme-entry .form [name*="s_textarea"] textarea{
+     font-size:var(--fs-body)!important;
+ }
  .on-focus[name*="s_textarea"] textarea,
     html:not(.designer) .form.editingForm [name*="s_textarea"] textarea{
-        min-height: 2vw !important;
-        top: -0.5vw;
-        font-size: .85vw !important;
+        min-height: 2rem !important;
+        top: -.5rem;
         border-radius: .5vw;
     }
 html:not(.designer) [name*="s_button"],
@@ -699,10 +746,10 @@ html:not(.designer) [name*="s_button s_secondary_button"] {
     color: #E22726!important;
 }
 html:not(.designer) [name*="s_textbox"],
-html:not(.designer) [name*="s_dropdown"],
+html:not(.designer) [name*="s_dropdown"] .select-box,
 html:not(.designer) [name*="s_calendar"],
 html:not(.designer) [name*="s_textbox"].editor-cell.lastcellinrow,
-html:not(.designer) [name*="s_dropdown"].editor-cell.lastcellinrow,
+html:not(.designer) [name*="s_dropdown"].editor-cell.lastcellinrow .select-box,
 html:not(.designer) [name*="s_calendar"].editor-cell.lastcellinrow
 {
     border: 1px solid var(--borderColor) !important;
@@ -718,6 +765,11 @@ html:not(.designer) [name*="s_calendar"].editor-cell.lastcellinrow
     align-content: center;
     padding: 0 1rem !important;
     position: relative;
+}
+html:not(.designer) [name*="s_textbox"].readonly,
+html:not(.designer) .theme-entry .input-control.select-box.read-only,
+[name*="s_textarea"][readonly]{
+    background-color:#f1f1f1!important;
 }
 html:not(.designer) [name*="s_textarea"].editor-cell.lastcellinrow{
     border: 1px solid var(--borderColor) !important;
@@ -782,39 +834,46 @@ html:not(.designer) .form.editingForm [name*="s_dropdown"] a.styling-font{
     border: 0 !important;
     background-color: transparent !important;
     height: 100% !important;
-    min-height: 3.3rem !important;
+    min-height: 2rem !important;
     padding: 0 !important;
     top: 0;
     cursor: pointer !important;
 }
-.theme-entry .input-control.select-box .input-control-buttons a.date > span span, 
-.theme-entry .input-control.select-box .input-control-buttons a.date:active > span span, 
-.theme-entry .input-control.select-box.active .input-control-buttons a.date > span span, 
-.theme-entry .input-control.select-box.read-only .input-control-buttons a.date:hover > span span, 
-.theme-entry .input-control.select-box.read-only .input-control-buttons a.date:focus > span span, 
-.theme-entry .input-control.select-box.disabled .input-control-buttons a.date:hover > span span, 
-.theme-entry .input-control.select-box.disabled .input-control-buttons a.date:focus > span span{
+html:not(.designer) body.theme-entry .input-control.select-box .input-control-buttons{
+    width:fit-content!important;
+}
+html:not(.designer) body.theme-entry [name*="s_dropdown"] .styling-outer-wrapper{
+   display:flex!important;
+    align-items:center!important;
+}
+html:not(.designer) body.theme-entry .input-control.select-box .input-control-buttons a.date > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box .input-control-buttons a.date:active > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box.active .input-control-buttons a.date > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box.read-only .input-control-buttons a.date:hover > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box.read-only .input-control-buttons a.date:focus > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box.disabled .input-control-buttons a.date:hover > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box.disabled .input-control-buttons a.date:focus > span span{
     background-image:url("/Runtime/Styles/DAEP/images/svg/date.svg")!important;
     background-size:1rem;
     background-position:center;
     background-repeat:no-repeat;
 }
-.theme-entry .input-control.select-box .input-control-buttons a.dropdown > span span, 
-.theme-entry .input-control.select-box .input-control-buttons a.dropdown:active > span span, 
-.theme-entry .input-control.select-box.active .input-control-buttons a.dropdown > span span, 
-.theme-entry .input-control.select-box.active .input-control-buttons a.dropdown:focus > span span, 
-.theme-entry .input-control.select-box.active .input-control-buttons a.dropdown:hover > span span, 
-.theme-entry .input-control.select-box.read-only .input-control-buttons a.dropdown:hover > span span, 
-.theme-entry .input-control.select-box.read-only .input-control-buttons a.dropdown:focus > span span{
+html:not(.designer) body.theme-entry  .input-control.select-box .input-control-buttons a.dropdown > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box .input-control-buttons a.dropdown:active > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box.active .input-control-buttons a.dropdown > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box.active .input-control-buttons a.dropdown:focus > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box.active .input-control-buttons a.dropdown:hover > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box.read-only .input-control-buttons a.dropdown:hover > span span, 
+html:not(.designer) body.theme-entry  .input-control.select-box.read-only .input-control-buttons a.dropdown:focus > span span{
     background-image: url("/Runtime/Styles/DAEP/images/red-chevron.png")!important;
     background-size:1rem;
     background-position:center!important;
 }
-.theme-entry .grid .grid-column-headers{
+html:not(.designer) body.theme-entry  .grid .grid-column-headers{
     border-top-left-radius:1rem;
     border-top-right-radius:1rem;
 }
-[name*="s_textbox"] input.SourceCode-Forms-Controls-Web-TextBox {
+html:not(.designer) body.theme-entry  [name*="s_textbox"] input.SourceCode-Forms-Controls-Web-TextBox {
     position: absolute !important;
     width: calc(100% - 2rem) !important;
     border: 0 !important;
@@ -825,34 +884,6 @@ html:not(.designer) .form.editingForm [name*="s_dropdown"] a.styling-font{
     top: 0;
     z-index: 1 !important;
 }
-
-.on-focus[name*="s_textbox"] input.SourceCode-Forms-Controls-Web-TextBox,
-html:not(.designer) .form.editingForm input.SourceCode-Forms-Controls-Web-TextBox{
-    position: absolute !important;
-    width: calc(100% - 2rem) !important;
-    border: 0 !important;
-    background-color: transparent !important;
-    height: 2rem !important;
-    min-height: 2rem !important;
-    padding: 0 !important;
-    top: 1.4rem;
-    z-index: 1 !important;
-    color: var(--black);
-}
-
-.on-focus[name*="s_textbox"] input.SourceCode-Forms-Controls-Web-TextBox,
-html:not(.designer) .form.editingForm input.SourceCode-Forms-Controls-Web-TextBox{
-    position: absolute !important;
-    width: calc(100% - 2rem) !important;
-    border: 0 !important;
-    background-color: transparent !important;
-    height: 2rem !important;
-    min-height: 2rem !important;
-    padding: 0 !important;
-    top: 1.4rem;
-    z-index: 1 !important;
-    font-size: var(--fs-body)!important;
-}
 html:not(.designer) [name*="s_dropdown"] .read-only{
     pointer-events:none;
 }
@@ -862,9 +893,6 @@ html:not(.designer) [name*="s_dropdown"] .read-only .input-control-buttons{
 html:not(.designer) body.theme-entry [name*="s_textbox"] input[readonly]{
     font-size:var(--textbox_dropdown_textarea_fontSize)!important;
     color: black;
-}
-html:not(.designer) textarea[readonly] {
-    top: -0.9vw;
 }
 /* TABLE STATUS COLUMN START */
 html:not(.designer) body.theme-entry .grid-content-cell-wrapper[title*="Draft"] > span{
@@ -955,7 +983,7 @@ html:not(.designer) body.theme-entry [name*="kpiItem"]{
     display:flex;
     justify-content: flex-end;
     flex-direction:column;
-    width: 24%;
+    width: 23%;
     border-radius: 1rem;
     padding: 1rem;
 }
@@ -1004,6 +1032,7 @@ html:not(.designer) body.theme-entry [name*="kpisTable"]{
  flex-wrap:wrap;
  width: 100%;
  gap: 1rem;
+ margin-bottom: 1rem;
 }
 @media (min-width: 992px) {
     :root {
@@ -1021,7 +1050,7 @@ html:not(.designer) body.theme-entry [name*="kpisTable"]{
     :root {
         --bodyLeftPadding_sidebarWidth: 18vw;
         --bodyPaddingTop_headerHeight: 6vw;
-        --sidebarPadding: 2vw 1.5vw;
+        --sidebarPadding: 1.7vw 1.5vw;
         --field_label_top: -0.6vw;
         --textbox_dropdown_textarea_fontSize: 1vw;
         --textbox_dropdown_textarea_borderRadius: .5vw;
@@ -1031,12 +1060,28 @@ html:not(.designer) body.theme-entry [name*="kpisTable"]{
         --s_collapse_borderRadius:1.5vw;
         --borderRadius_05:0.5vw;
     }
-    html:not(.designer) .theme-entry [name*="s_dropdown"] .select-box .input-control a.input-control span, 
-    html:not(.designer) .theme-entry [name*="s_dropdown"] .select-box .input-control.watermark a.input-control span, 
-    html:not(.designer) [name*="s_dropdown"] a.styling-font, 
-    html:not(.designer) [name*="s_picker"] a.styling-font{
-    margin-top:1vw;
+    html:not(.designer) body.theme-entry [name*="kpisTable"]{
+        margin-bottom: 2vw;
+        gap: 2vw;
     }
+html:not(.designer) body.theme-entry [name*="buttonsGap"],
+    html:not(.designer) body.theme-entry [name*="buttonsGap"] [layouttype="cell"]{
+ gap:1vw!important;
+}
+    html:not(.designer) body.theme-entry .on-focus[name*="s_textarea"] [name*="s_label"],
+    html:not(.designer) body.theme-entry .editingForm [name*="s_textarea"] [name*="s_label"]{
+    top: -0.1vw!important;
+}
+
+    html:not(.designer) .input-control.select-box {
+    min-height: 2vw !important;
+}
+    html:not(.designer) body.theme-entry .toolbars.single .toolbar .toolbar-wrapper:has(.filterContainer){margin-bottom: 1.3vw;}
+header [name*="languageButton"]{
+    height:3vw!important;
+    width:3vw!important;
+    min-height:3vw!important;
+}
     .SourceCodeFormsControlsWorklist{
     border-radius:1vw!important;
 }
@@ -1086,24 +1131,9 @@ html:not(.designer) body.theme-entry [name*="kpiItem"]::before{
     transform: translateY(-0.4vw);
     font-size:.7vw;
 }
-
-    html:not(.designer) [name*="s_textarea"]:has(.read-only) [name*="s_label"],
-    html:not(.designer) .on-focus[name*="s_textarea"] [name*="s_label"],
-    html:not(.designer) .form.editingForm [name*="s_textarea"] [name*="s_label"]{
-    transform: translateY(-0.2vw);
-}
     html:not(.designer) .on-focus[name*="s_calendar"] input[type=text].input-control{font-size:.875vw;top: 0.7vw!important;padding:0;}
      .sidebarHeader{
-    margin-bottom:1vw;
-}
-html:not(.designer) .on-focus [name*="s_asterik"],
-html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_asterik"]{
-    color:var(--red)!important;
-    transform:translateY(-.7vw);
-    height: unset!important;
-    min-height: unset;
-    min-height: unset!important;
-    padding: 0!important;
+    /* margin-bottom:1vw; */
 }
 .sidebarHeader button.collapseSidebar {
 
@@ -1134,7 +1164,7 @@ html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_asterik"]
     }
 
     .sideBarLinksGroup .icon {
-        width: 1.2vw;
+        width: 1.4vw;
     }
 
     html body ul.links li .icon {
@@ -1155,7 +1185,7 @@ html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_asterik"]
     /* COLLAPSE VIEW START */
     html:not(.designer) body.theme-entry .view [name*="s_collapse"] .panel-header-wrapper,
     html:not(.designer) body.theme-entry .view [name*="s_collapse"] .grid-header-wrapper{
-        padding: 2VW 1VW;
+        padding: 2.5vw 1vw;
         height: 4VW !important;
         min-height: 4VW !important;
     }
@@ -1175,13 +1205,4 @@ html:not(.designer) [name*="s_textbox"]:has(input[readonly]) [name*="s_asterik"]
         font-size: 1vw;
         margin: .3vw 0;
     }
-
-    html:not(.designer) [name*="s_textbox"],
-    html:not(.designer) [name*="s_dropdown"],
-    html:not(.designer) [name*="s_calendar"]{
-        padding: 0 1vw !important;
-    }
-html:not(.designer) textarea[readonly] {
-    top: -0.9vw;
-}
 }
