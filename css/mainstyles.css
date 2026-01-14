@@ -28,8 +28,160 @@
     --fs-button: clamp(0.85rem, 0.35vw + 0.85rem, 0.95rem);
     --fs-caption: clamp(0.85rem, 0.3vw + 0.8rem, 0.9rem);
 }
+@keyframes fadeOut{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.collapsed-sidebar .sidebarHeader button.collapseSidebar{
+    display: none!important;
+}
+.theme-entry .grid table.grid-content-table tr.selected>td, .theme-entry .grid table.grid-content-table.zebra-stripes tr.selected:not(.action-row)>td {
+    background-color:#e227262b!important;
+    color: var(--list-item-selected-text-color);
+}
+/*  POPUPS ICONS */
+html:not(.designer) .theme-entry .message-box-content.confirmation:before,
+html:not(.designer) .theme-entry .message-box-content.info:before,
+html:not(.designer) .theme-entry .message-box-content.message:before,
+.theme-entry .message-box-content.message:before {
+    background-image: url("/Runtime/Styles/DAEP/images/general.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 50%;
+    transform: translateY(-50%);
+    height: clamp(2rem, 3vw + 0.6rem, 3rem);
+    width: clamp(2rem, 3vw + 0.6rem, 3rem);
+}
+.theme-entry .dialog.runtime-message .message-box-content .panel.full.without-header .panel-body{
+    margin:0!important;
+}
+.theme-entry .dialog.runtime-message .message-box-content .panel.full.without-header .panel-body .message{
+    font-size:var(--fs-body);
+    font-family:var(--regularFont)!important;
+    color:var(--black);
+}
+html:not(.designer) .theme-entry .message-box-content.warning:before {
+    background-image: url("/Runtime/Styles/DAEP/images/Warning.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 50%;
+    transform: translateY(-50%);
+    height: clamp(2rem, 3vw + 0.6rem, 3rem);
+    width: clamp(2rem, 3vw + 0.6rem, 3rem);
+}
+html body .overlayShadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0 0 0 / 70%);
+    z-index: 2;
+    display: none;
+    transition: all 1s ease-in-out;
+}
+html:not(.designer) body.theme-entry [name*="SubHeader"]{
+    color:var(--black);
+    font-size: var(--fs-body)!important;
+    font-family: var(--regularFont);
+    padding: 0!important;
+}
+html body .overlayShadow.active {
+    display: block;
+}
+/* subpanel */
+.subPanel {
+    z-index: 0;
+    position: fixed;
+    background-color: white;
+    height: 100vh;
+    width: 29rem;
+    left: var(--bodyLeftPadding_sidebarWidth);
+    top: 0;
+    bottom: 0;
+    transform: translateX(-200%);
+    z-index: 6;
+    transition: all 1s ease-in-out;
+    padding: 3rem 0rem;
+    border-top-right-radius: 1.5rem;
+}
+html body.collapsed-sidebar .subPanel{
+    left: 8rem;
+}
+.subPanel.active{
+    transform: translateX(0%);
+}
+.subPanel .closeSubpanel {
+    background-color: #333E48;
+    height: 3.5rem;
+    width: 3.5rem;
+    transition: all .3s ease-in-out;
+    padding: 1.2rem;
+    position: absolute;
+    top: 2rem;
+    right: -3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    cursor: pointer;
+}
+.subPanel .subPanelHeader{
+    border-bottom:1px solid rgb(0 0 0 / 10%);
+    padding: 0 2rem;
+}
+.subPanelBody{
+    padding:2rem;
+    height: calc(100% - 4rem);
+    overflow: auto;
+}
+.subPanelBody ul{
+    padding:0;
+}
+.subPanelBody li a{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    padding:1rem;
+    background: url("/Runtime/Styles/DAEP/images/BG.png");
+    border-radius:.7rem;
+    margin-bottom:1rem;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+}
+.subPanelBody li a{
+    text-decoration:none;
+    color:#000000;
+    font-size:var(--fs-body);
+    font-family:var(--regularFont);
+}
+.subPanel .subPanelHeader .subSectionTitle {
+    margin-bottom: 2.8rem;
+    font-family: var(--boldFont);
+    font-size: 1.5rem;
+    color: #000000;
+}
 /**/
-html:not(.designer) body.theme-entry [name*="add_new_item"]{
+.theme-entry .form .row:first-child{
+    display:none;
+}
+html:not(.designer) body.theme-entry [name*="s_link add_new_item"]{
     display:flex!important;
     align-items:center;
     border: 1.9px solid #D8D8D8!important;
@@ -37,18 +189,31 @@ html:not(.designer) body.theme-entry [name*="add_new_item"]{
     width:fit-content;
     border-radius:.5rem;
     margin-left: 1rem;
-}
-html:not(.designer) body.theme-entry [name*="buttonsGap"],
-html:not(.designer) body.theme-entry [name*="buttonsGap"] [layouttype="cell"]{
- gap:1rem!important;
-}
-html:not(.designer) body.theme-entry [name*="add_new_item"] [name*="s_link"]{
+    padding-left:3rem;
     color:#333E48;
     font-family: var(--boldFont)!important;
     font-size: var(--fs-body)!important;
     text-decoration: none;
     margin-left: .5rem;
 }
+html:not(.designer) body.theme-entry [name*="add_new_item"]::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left: 1.5rem;
+    transform:translateY(-50%);
+    height: 1.7rem;
+    width: 1.7rem;
+    background-image:url("/Runtime/Styles/DAEP/images/plus.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+}
+html:not(.designer) body.theme-entry [name*="buttonsGap"],
+html:not(.designer) body.theme-entry [name*="buttonsGap"] [layouttype="cell"]{
+ gap:1rem!important;
+}
+
 html:not(.designer) body.theme-entry .toolbars.single .toolbar .toolbar-wrapper:has(.filterContainer){
 margin-bottom:1rem;
 }
@@ -410,10 +575,18 @@ html:not(.designer) body.theme-entry {
     padding-left: var(--bodyLeftPadding_sidebarWidth);
     padding-top: var(--bodyPaddingTop_headerHeight);
 }
+html:not(.designer) body.theme-entry.collapsed-sidebar{
+    padding-left: 8rem;
+}
 html:not(.designer) body.theme-entry [name*="tableGap"]{
     gap: var(--tableGap);
 }
 /* HEADER START */
+html:not(.designer) .collapsed-sidebar header{
+    left:8rem;
+    width: calc(100% - 8rem);
+    padding-left:4rem;
+}
 header {
     position: fixed;
     top: 0;
@@ -464,11 +637,53 @@ header [name*="headerTitle"] {
     font-size: var(--fs-h3);
     color: #000000;
     font-family: var(--boldFont)!important;
+    padding: 0!important;
+}
+html:not(.designer) body.theme-entry .filterTxt {
+    width: 17rem!important;
+   
+}
+.theme-entry .filterContainer .quickSearch .filterTxt .input-control .input-control-wrapper{
+width:100%;
+}
+.theme-entry .grid.with-header .grid-toolbars .filterContainer .filter{
+    position:relative;
+}
+html:not(.designer) body.theme-entry a.toolbar-button.style-aware.refresh{
+    position:absolute;
+    right: 1rem;
+}
+html:not(.designer) body.theme-entry a.toolbar-button.style-aware.refresh span.button-c span.button-icon{
+    display:block;
+    background-image:url("/Runtime/Styles/DAEP/images/Search.svg");
+    background-repeat:no-repeat;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-size: contain;
+    opacity: 1;
+    visibility: visible;
+    background-position: center;
+}
+html:not(.designer) body.theme-entry a.toolbar-button.style-aware.refresh span.button-c svg{
+    display:none;
+}
+html:not(.designer) body.theme-entry .filterTxt input{
+    width:100%!important;
 }
 .sidebarHeader .logo {
     width: 10rem!important;
 }
-.sidebarHeader .logo svg{
+.sidebarHeader .logo img:nth-child(2){
+    display:none;
+}
+.collapsed-sidebar .sidebarHeader .logo img:nth-child(2){
+    display:block;
+}
+.collapsed-sidebar .sidebarHeader .logo img:nth-child(1){
+    display:none;
+}
+.sidebarHeader .logo svg,
+.sidebarHeader .logo img{
     height:100%!important;
     width:100%!important;
     object-fit:contain;
@@ -524,13 +739,27 @@ html:not(.designer) body.theme-entry .Grid-Layout>.editor-cell[name*="userDropdo
 }
 .sideBarLinksGroup {
     padding: var(--sidebarPadding);
+
 }
-.sidebarHeader button.collapseSidebar {
+.sidebarHeader button.collapseSidebar,
+.headerCollapseSidebar{
     background-color: rgb(0 0 0 / 10%);
     border: none;
     height: 3rem;
     width: 3rem;
     border-radius: .5rem;
+}
+.headerCollapseSidebar{
+    position:absolute;
+    top: 45%;
+    transform:translateY(-50%);
+    left: 1rem;
+    display:none;
+    background-color: transparent;
+    padding: 0!important;
+}
+.collapsed-sidebar .headerCollapseSidebar{
+    display:block;
 }
 html body aside.sidebar {
     width: var(--bodyLeftPadding_sidebarWidth);
@@ -539,19 +768,26 @@ html body aside.sidebar {
     top: 0;
     left: 0;
     border-right: 1.5px solid rgb(0 33 52 / 10%);
-    z-index: 2;
+    z-index: 7;
     background-image: url("/Runtime/Styles/DAEP/images/sidebarPattern.png");
     opacity: 0;
     transition: all .3s ease-in-out;
     transform: translateX(-100%);
     animation: 1s fadeLeft forwards;
+    /* transition: .5s width 1s ease; */
 }
-
+html body.collapsed-sidebar aside.sidebar{
+    width: 8rem;
+}
+html body.collapsed-sidebar ul.links>li a{
+    /* animation: .5s fadeOut forwards; */
+    display: none;
+}
 html body ul.links {
     padding: 0;
 }
 
-html body ul.links>li {
+html body:not(.collapsed-sidebar) ul.links>li {
     display: flex;
     align-items: center;
     padding: .5rem 1rem;
@@ -559,9 +795,40 @@ html body ul.links>li {
     margin-bottom: .5rem;
     border-radius: .5rem;
     transition:all .3s ease-in-out;
+    border: 1px solid transparent;
 }
-html body ul.links>li:hover,
-html body ul.links>li.active{
+html body ul.links>li{
+ margin-bottom: 1rem;
+ list-style-type: none;
+
+}
+html body.collapsed-sidebar ul.links>li{
+ margin-bottom: 2rem;
+ list-style-type: none;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+html body ul.links>li.isSubMenu{
+    position:relative;
+}
+html body.collapsed-sidebar .sidebarCategory .categoryName{
+    display:none;
+}
+html body:not(.collapsed-sidebar) ul.links>li.isSubMenu::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right:0;
+    background-image:url(
+    "../images/chevronRight.png");
+    height:1rem;
+    width:1rem;
+    background-repeat:no-repeat;
+}
+html body:not(.collapsed-sidebar) ul.links>li:hover,
+html body:not(.collapsed-sidebar) ul.links>li.active{
     background-color:rgb(255 255 255 / 15%);
     backdrop-filter:blur(20px);
     border:1px solid rgb(255 255 255 / 20%);
@@ -574,7 +841,7 @@ html body ul.links>li.active{
     justify-content: center;
 }
 
-html body ul.links li .icon {
+html body:not(.collapsed-sidebar) ul.links li .icon {
     margin-right: 1rem;
 }
 
@@ -582,13 +849,18 @@ html body ul.links li .icon {
     width: 100%;
     height: auto;
 }
-
+.sideBarLinksGroup .isSubMenu a{
+    pointer-events: all;
+}
 .sideBarLinksGroup a {
     font-size: var(--fs-body);
     color: var(--white);
     text-decoration: none;
     opacity: 1;
     display: block;
+    transition: all .3s ease-in-out;
+    /* opacity: 0; */
+    /* animation: .5s fadeIn .5s forwards; */
 }
 
 /* SIDEBAR END */
@@ -626,7 +898,11 @@ html:not(.designer) body.theme-entry .grid-header-wrapper .grid-header-text > sp
     font-family: var(
     --boldFont) !important;
 }
-
+html:not(.designer) body.theme-entry [name*="s_calendar"].invalid,
+html:not(.designer) [name*="s_dropdown"] .select-box.invalid{
+    background-color: var(--input-error-background-color)!important;
+    border-color: var(--input-error-border-color) !important;
+}
 /* COLLAPSE VIEW END */
 html:not(.designer) [name*="s_textarea"] {
     border: 1px solid var(--borderColor) !important;
@@ -969,13 +1245,20 @@ html:not(.designer) body.theme-entry  .grid-content-cell-wrapper[title*="Returne
 }
  .theme-entry.runtime-form .grid .grid-content-cell-wrapper{
         vertical-align:middle;
-        align-content:center;
+        justify-content: center;
         display: flex;
         align-items: center;
+        padding: 1rem;
+        font-size: var(--fs-body);
+        font-style: normal;
+        font-family: var(--regularFont);
     }
     .theme-entry.runtime-form .grid .center-align .grid-content-cell-wrapper{
         justify-content:center;
     }
+html:not(.designer) body.theme-entry.collapsed-sidebar [name*="kpiItem"]{
+    width: 24.2%;
+}
 html:not(.designer) body.theme-entry [name*="kpiItem"]{
     border: 2px solid rgb(0 0 0 / 10%)!important;
     position:relative;
@@ -983,7 +1266,7 @@ html:not(.designer) body.theme-entry [name*="kpiItem"]{
     display:flex;
     justify-content: flex-end;
     flex-direction:column;
-    width: 23%;
+    width: 24%;
     border-radius: 1rem;
     padding: 1rem;
 }
@@ -1034,6 +1317,30 @@ html:not(.designer) body.theme-entry [name*="kpisTable"]{
  gap: 1rem;
  margin-bottom: 1rem;
 }
+ .theme-entry .SourceCodeFormsControlsWorklist .nav {
+     padding: 2.5rem 1rem;
+     height: 4rem !important;
+     min-height: 4rem !important;
+     vertical-align:middle;
+     align-content:center;
+ }
+ html:not(.designer) body.theme-entry [name*="DraftButton"]{
+    position:relative;
+    padding-left: 2.5rem!important;
+ }
+  html:not(.designer) body.theme-entry  [name*="DraftButton"]::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    left:1rem;
+    height:1.5rem;
+    width:1.5rem;
+    background-image:url("/Runtime/Styles/DAEP/images/saveAsDraft.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
 @media (min-width: 992px) {
     :root {
         --bodyLeftPadding_sidebarWidth: 19.5rem;
@@ -1050,7 +1357,7 @@ html:not(.designer) body.theme-entry [name*="kpisTable"]{
     :root {
         --bodyLeftPadding_sidebarWidth: 18vw;
         --bodyPaddingTop_headerHeight: 6vw;
-        --sidebarPadding: 1.7vw 1.5vw;
+        --sidebarPadding: 1.7vw 0.9vw;
         --field_label_top: -0.6vw;
         --textbox_dropdown_textarea_fontSize: 1vw;
         --textbox_dropdown_textarea_borderRadius: .5vw;
@@ -1060,6 +1367,29 @@ html:not(.designer) body.theme-entry [name*="kpisTable"]{
         --s_collapse_borderRadius:1.5vw;
         --borderRadius_05:0.5vw;
     }
+     html:not(.designer) body.theme-entry [name*="DraftButton"]{
+    
+    padding-left: 2.5vw!important;
+ }
+  html:not(.designer) body.theme-entry  [name*="DraftButton"]::after{
+    
+    left:1vw;
+    height:1.5vw;
+    width:1.5vw;
+    
+  }
+    html body ul.links>li{
+     margin-bottom: 1vw;
+    }
+    html:not(.designer) body.theme-entry.collapsed-sidebar{
+    padding-left:5vw;
+}
+    html body.collapsed-sidebar .subPanel{
+    left:5vw;
+}
+    html body.collapsed-sidebar aside.sidebar{
+    width: 5vw;
+}
     html:not(.designer) body.theme-entry [name*="kpisTable"]{
         margin-bottom: 2vw;
         gap: 2vw;
@@ -1109,13 +1439,38 @@ html:not(.designer) body.theme-entry  .grid-content-cell-wrapper[title*="Returne
     border:1px solid rgb(0 0 0 / 10%)!important;
     border-radius:1rem!important;
 }
+  .empty-grid  .grid-content-cell-wrapper{
+      text-align:center!important;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:var(--fs-body);
+      padding:1rem!important;
+      color:var(--black);
+      font-family:var(--regularFont);
+  }
+    .theme-entry .SourceCodeFormsControlsWorklist table.nav>tbody>tr:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    width: 100%;
+}
+ .theme-entry .SourceCodeFormsControlsWorklist .nav {
+     padding: 2.5vw 1vw;
+     height: 4VW !important;
+     min-height: 4VW !important;
+     vertical-align:middle;
+     align-content:center;
+ }
 /* TABLE SORT ICON */
    html:not(.designer) .filterContainer{
 padding:1vw 0;}
     html:not(.designer) body.theme-entry .view [name*="s_collapse"]{
         padding-bottom:1vw;
     }
-    html:not(.designer) body.theme-entry [name*="kpiItem"]{height: 8vw;border-radius: 1vw;padding: 1vw;}
+    html:not(.designer) body.theme-entry [name*="kpiItem"]{height: 8vw;border-radius: 1vw;padding: 1vw;width: 23%;}
+    html:not(.designer) body.theme-entry.collapsed-sidebar [name*="kpiItem"]{width: 23.3%;}
 html:not(.designer) body.theme-entry [name*="kpiIcon"]{
     top: 1vw;
     right: 1vw;
@@ -1132,9 +1487,7 @@ html:not(.designer) body.theme-entry [name*="kpiItem"]::before{
     font-size:.7vw;
 }
     html:not(.designer) .on-focus[name*="s_calendar"] input[type=text].input-control{font-size:.875vw;top: 0.7vw!important;padding:0;}
-     .sidebarHeader{
-    /* margin-bottom:1vw; */
-}
+
 .sidebarHeader button.collapseSidebar {
 
     height: 2.5vw;
@@ -1157,7 +1510,7 @@ html:not(.designer) body.theme-entry [name*="kpiItem"]::before{
     background-size: 0.8vw;
 }
     /* SIDEBAR START */
-    html body ul.links>li {
+    html body:not(.collapsed-sidebar) ul.links>li {
         padding: .5vw 1vw;
         margin-bottom: .5vw;
         border-radius: .5vw;
@@ -1167,7 +1520,7 @@ html:not(.designer) body.theme-entry [name*="kpiItem"]::before{
         width: 1.4vw;
     }
 
-    html body ul.links li .icon {
+    html body:not(.collapsed-sidebar) ul.links li .icon {
         margin-right: 1vw;
     }
     /* SIDEBAR END */
