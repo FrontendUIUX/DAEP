@@ -65,6 +65,16 @@ html:not(.designer) .theme-entry .message-box-content.message:before,
     height: clamp(2rem, 3vw + 0.6rem, 3rem);
     width: clamp(2rem, 3vw + 0.6rem, 3rem);
 }
+html:not(.designer) .theme-entry .message-box-content.error:before{
+    background-image: url("/Runtime/Styles/DAEP/images/svg/error.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 21%;
+    transform: translateY(-50%);
+    height: clamp(2rem, 3vw + 0.6rem, 3rem);
+    width: clamp(2rem, 3vw + 0.6rem, 3rem);
+}
 .theme-entry .dialog.runtime-message .message-box-content .panel.full.without-header .panel-body{
     margin:0!important;
 }
@@ -1243,7 +1253,8 @@ html:not(.designer) body.theme-entry  .grid-content-cell-wrapper[title*="Returne
 .theme-entry .grid:not(.allow-cell-content-selection) table.grid-content-table>tbody>tr>td{
     align-content:center;
 }
- .theme-entry.runtime-form .grid .grid-content-cell-wrapper{
+ .theme-entry.runtime-form .grid .grid-content-cell-wrapper,
+.theme-entry .SourceCodeFormsControlsWorklist .WatermarkText{
         vertical-align:middle;
         justify-content: center;
         display: flex;
@@ -1252,6 +1263,7 @@ html:not(.designer) body.theme-entry  .grid-content-cell-wrapper[title*="Returne
         font-size: var(--fs-body);
         font-style: normal;
         font-family: var(--regularFont);
+        color:#666;
     }
     .theme-entry.runtime-form .grid .center-align .grid-content-cell-wrapper{
         justify-content:center;
@@ -1318,12 +1330,32 @@ html:not(.designer) body.theme-entry [name*="kpisTable"]{
  margin-bottom: 1rem;
 }
  .theme-entry .SourceCodeFormsControlsWorklist .nav {
-     padding: 2.5rem 1rem;
-     height: 4rem !important;
-     min-height: 4rem !important;
      vertical-align:middle;
      align-content:center;
+     background-color: #F7F7F7;
+     background-image: url(/Runtime/Styles/DAEP/images/view-header-pattern.png);
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     padding: 2rem 1rem;
+     height: 4rem !important;
+     min-height: 4rem !important;
  }
+ .theme-entry .SourceCodeFormsControlsWorklist .nav > tbody{
+     width:100%;
+ }
+.theme-entry .SourceCodeFormsControlsWorklist .headerTxt{
+    color: var(--black);
+    font-size: var(--fs-h3);
+    font-family: var(--boldFont) !important;
+}
+.theme-entry .SourceCode-Forms-Controls-Web-ControlPack-Worklist .SourceCodeFormsControlsWorklist{
+    border: var(--s_collapse_border);
+    border-radius: var(--s_collapse_borderRadius);
+    overflow: hidden;
+    padding-bottom: 1rem;
+    transition: all .3s ease-in-out;
+}
  html:not(.designer) body.theme-entry [name*="DraftButton"]{
     position:relative;
     padding-left: 2.5rem!important;
